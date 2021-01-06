@@ -63,6 +63,13 @@
         
        <asp:Button  id="signUp" class="btn btn-success marg btn-lg" Text="Sign Up" runat="server" OnClick="signUp_Click" />
 
+
+         <div class="input-group marg">
+            <div class="input-group-prepend">
+                <asp:Panel ID="incorrectInput"  runat="server"></asp:Panel>
+             </div>
+         </div>
+
       </fieldset>
    </div>      
 
