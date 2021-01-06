@@ -22,7 +22,7 @@ namespace GUCera.Instructor
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
 
-            SqlCommand cmd = new SqlCommand("studentRegister", conn);
+            SqlCommand cmd = new SqlCommand("InstructorRegister", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             string fName = firstName.Text;
@@ -32,18 +32,32 @@ namespace GUCera.Instructor
             Boolean gend = female.Checked;
             string add = address.Text;
 
-            cmd.Parameters.Add("@first_name", fName);
-            cmd.Parameters.Add("@last_name", lName);
-            cmd.Parameters.Add("@password", pass);
-            cmd.Parameters.Add("@email", mail);
-            cmd.Parameters.Add("@gender", gend);
-            cmd.Parameters.Add("@address", add);
+            try
+            {
+                cmd.Parameters.Add("@first_name", fName);
+                cmd.Parameters.Add("@last_name", lName);
+                cmd.Parameters.Add("@password", pass);
+                cmd.Parameters.Add("@email", mail);
+                cmd.Parameters.Add("@gender", gend);
+                cmd.Parameters.Add("@address", add);
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            Response.Redirect("~/Default.aspx");
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                Response.Redirect("~/Default.aspx");
+            }
+            catch (Exception ex)
+            {
+                if (ex is SqlException)
+                {
+                    Label l = new Label();
+                    l.Text = "Email already exists or Incorrect data submitted please try again";
+                    incorrectInput.Controls.Add(l);
+                }
+                else
+                {
+                }
+            }
 
         }
     }
