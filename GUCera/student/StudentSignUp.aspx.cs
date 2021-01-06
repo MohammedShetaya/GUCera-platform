@@ -32,6 +32,8 @@ namespace GUCera.Student
             Boolean gend = female.Checked ;  
             string add = address.Text ;
 
+
+
             try
             {
                 cmd.Parameters.Add("@first_name", fName);
