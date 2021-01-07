@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddTelephoneNumber.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="instructor\InstructorSignUp.aspx" />
     <Content Include="script\script.js" />
@@ -74,9 +75,17 @@
     <Content Include="SignUp.aspx" />
     <Content Include="student\StudentSignUp.aspx" />
     <Content Include="styles\style.css" />
+    <Content Include="ViewProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTelephoneNumber.aspx.cs">
+      <DependentUpon>AddTelephoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTelephoneNumber.aspx.designer.cs">
+      <DependentUpon>AddTelephoneNumber.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +127,13 @@
     </Compile>
     <Compile Include="student\StudentSignUp.aspx.designer.cs">
       <DependentUpon>StudentSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProfile.aspx.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewProfile.aspx.designer.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

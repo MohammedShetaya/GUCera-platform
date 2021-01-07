@@ -14,6 +14,10 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] != null) {
+                Response.Redirect("~/Default.aspx"); 
+            }
+
         }
 
         protected void signin_Click(object sender, EventArgs e)
@@ -45,7 +49,49 @@ namespace GUCera
 
             if (success.Value.ToString().Equals("1"))
             {
-                Response.Redirect("Default.aspx");
+
+                SqlCommand cmd1 = new SqlCommand("viewMyProfile", conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+
+                cmd1.Parameters.Add("@id", u); 
+
+                conn.Open(); 
+
+                SqlDataReader rdr = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (rdr.Read())
+                {
+                    Session["userID"] = u;
+                    Session["firstName"] = rdr.GetString(rdr.GetOrdinal("firstName"));
+                    Session["lastName"] = rdr.GetString(rdr.GetOrdinal("lastName"));
+                    Session["userType"] = 0;
+                }
+                else {
+                    rdr.Close();
+                    conn.Close();
+                    
+                    SqlCommand cmd2 = new SqlCommand("viewInstructorProfile", conn);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+
+                    cmd2.Parameters.Add("@instrId", u);
+
+                    conn.Open();
+
+                    SqlDataReader rdr1 = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
+
+                    if (rdr1.Read())
+                    {
+                       
+                        Session["userID"] = u;
+                        Session["firstName"] = rdr1.GetString(rdr1.GetOrdinal("firstName"));
+                        Session["lastName"] = rdr1.GetString(rdr1.GetOrdinal("lastName"));
+                        Session["userType"] = 1;
+                       
+                    }
+                }
+
+
+                Response.Redirect("~/Default.aspx");
 
             }
             else

@@ -14,6 +14,10 @@ namespace GUCera.Student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] != null)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
 
         }
 
@@ -32,10 +36,8 @@ namespace GUCera.Student
             Boolean gend = female.Checked ;  
             string add = address.Text ;
 
-
-
             try
-            {
+              {
                 cmd.Parameters.Add("@first_name", fName);
                 cmd.Parameters.Add("@last_name", lName);
                 cmd.Parameters.Add("@password", pass);
@@ -46,6 +48,26 @@ namespace GUCera.Student
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
+
+            SqlCommand cmd1 = new SqlCommand("select * from Users where email = @mail", conn);
+
+            cmd1.CommandType = CommandType.Text;
+            cmd1.Parameters.Add(new SqlParameter("mail", mail));
+
+
+            conn.Open();
+
+                SqlDataReader rdr = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (rdr.Read()) {
+
+                    Session["userID"] = (rdr.GetInt32(rdr.GetOrdinal("id"))) ;
+                    Session["firstName"] = rdr.GetString(rdr.GetOrdinal("firstName")) ;
+                    Session["lastName"] = rdr.GetString(rdr.GetOrdinal("lastName"));
+                    Session["userType"] = 0;
+                }
+
                 Response.Redirect("~/Default.aspx");
             }
             catch (Exception ex) {
@@ -57,7 +79,8 @@ namespace GUCera.Student
                 }
                 else { 
                 }
-            }
+            } 
+           
             
         }
     }

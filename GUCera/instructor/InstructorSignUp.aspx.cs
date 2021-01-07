@@ -14,13 +14,17 @@ namespace GUCera.Instructor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userID"] != null)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
         }
 
         protected void signUp_Click(object sender, EventArgs e)
         {
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
+
 
             SqlCommand cmd = new SqlCommand("InstructorRegister", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -44,6 +48,27 @@ namespace GUCera.Instructor
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
+
+                SqlCommand cmd1 = new SqlCommand("select * from Users where email = @mail", conn);
+
+                cmd1.CommandType = CommandType.Text;
+                cmd1.Parameters.Add(new SqlParameter("mail", mail));
+
+
+                conn.Open();
+
+                SqlDataReader rdr = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (rdr.Read())
+                {
+
+                    Session["userID"] = (rdr.GetInt32(rdr.GetOrdinal("id")));
+                    Session["firstName"] = rdr.GetString(rdr.GetOrdinal("firstName"));
+                    Session["lastName"] = rdr.GetString(rdr.GetOrdinal("lastName"));
+                    Session["userType"] = 0;
+                }
+
                 Response.Redirect("~/Default.aspx");
             }
             catch (Exception ex)
