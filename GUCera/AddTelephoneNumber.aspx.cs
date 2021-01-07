@@ -7,15 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace GUCera
 {
-    public partial class SignUp : System.Web.UI.Page
+    public partial class AddTelephoneNumber : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userID"] != null)
-            {
-                Response.Redirect("~/Default.aspx");
+            if (Session["userID"] == null) {
+                Response.Redirect("~/SignIn.aspx"); 
             }
-
         }
     }
 }
