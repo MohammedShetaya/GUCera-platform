@@ -111,6 +111,9 @@ namespace GUCera.student
                 gender.Controls.Add(l7); 
                 email.Controls.Add(l5);
                 address.Controls.Add(l6);
+
+
+              
             }
             else
                 Response.Redirect("~/SignIn.aspx");
