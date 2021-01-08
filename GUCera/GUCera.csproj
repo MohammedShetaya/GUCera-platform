@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -68,11 +71,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddTelephoneNumber.aspx" />
-    <Content Include="Default.aspx" />
+    <Content Include="admin\AdminDefault.aspx" />
+    <Content Include="assignment\assignments.aspx" />
+    <Content Include="Default.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\courses.jpg" />
+    <Content Include="images\promocodes.jpg" />
+    <Content Include="instructor\InstructorDefault.aspx" />
     <Content Include="instructor\InstructorSignUp.aspx" />
     <Content Include="script\script.js" />
     <Content Include="SignIn.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="student\StudentDefault.aspx" />
     <Content Include="student\StudentSignUp.aspx" />
     <Content Include="styles\style.css" />
     <Content Include="ViewProfile.aspx" />
@@ -86,12 +97,35 @@
     <Compile Include="AddTelephoneNumber.aspx.designer.cs">
       <DependentUpon>AddTelephoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\AdminDefault.aspx.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminDefault.aspx.designer.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assignment\assignments.aspx.cs">
+      <DependentUpon>assignments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assignment\assignments.aspx.designer.cs">
+      <DependentUpon>assignments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="instructor\InstructorDefault.aspx.cs">
+      <DependentUpon>InstructorDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructor\InstructorDefault.aspx.designer.cs">
+      <DependentUpon>InstructorDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructor\InstructorSignUp.aspx.cs">
       <DependentUpon>InstructorSignUp.aspx</DependentUpon>
@@ -117,9 +151,17 @@
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="student\StudentDefault.aspx.cs">
+      <DependentUpon>StudentDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\StudentDefault.aspx.designer.cs">
+      <DependentUpon>StudentDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\StudentSignUp.aspx.cs">
       <DependentUpon>StudentSignUp.aspx</DependentUpon>
@@ -147,13 +189,13 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="admin\" />
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -172,6 +214,9 @@
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:56224/" workingDir="" />
+          </servers>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

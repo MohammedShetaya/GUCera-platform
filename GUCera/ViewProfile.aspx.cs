@@ -24,7 +24,7 @@ namespace GUCera.student
                 if (Session["userType"].Equals(0))
                 {
 
-                    cmd = new SqlCommand("viewStudentProfile", conn);
+                    cmd = new SqlCommand("viewMyProfile", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id", Session["userID"]);
 
@@ -100,6 +100,25 @@ namespace GUCera.student
                 inOrStValue.Controls.Add(l4);
                 email.Controls.Add(l5);
                 address.Controls.Add(l6);
+
+
+                // handling connected services tab
+                Label slide1Label = new Label();
+                Label slide2Label = new Label();
+                if (Session["userType"].Equals(0))
+                {
+                    slide1Label.Text = "There are many usefull courses in which you can enroll";
+                    slidePanel1.Controls.Add(slide1Label);
+                    slideButton1.Text = "Show Courses";
+
+                    slide2Label.Text = "We are offering you powerfull promocodes";
+                    slidePanel2.Controls.Add(slide2Label);
+                    slideButton2.Text = "Discover Promocodes";
+                }
+                else
+                {
+
+                }
             }
             else
                 Response.Redirect("~/SignIn.aspx");
