@@ -46,6 +46,7 @@ namespace GUCera.student
                 string ps = "";
                 string gp = "";
                 string ra = "";
+                string ge = "";
                 string em = "";
                 string ad = "";
 
@@ -58,7 +59,13 @@ namespace GUCera.student
                     if (Session["userType"].Equals(0))
                         gp = rdr.GetDecimal(rdr.GetOrdinal("gpa")) + "";
                     else
-                        ra = rdr.GetDecimal(rdr.GetOrdinal("rating")) +"" ; 
+                        ra = rdr.GetDecimal(rdr.GetOrdinal("rating")) +"" ;
+
+                    bool d = (bool)rdr.GetBoolean(rdr.GetOrdinal("gender")); 
+                    if (!d) 
+                        ge = "Male";
+                    else
+                        ge = "Female";
                     em = rdr.GetString(rdr.GetOrdinal("email"));
                     ad = rdr.GetString(rdr.GetOrdinal("address"));
                 }
@@ -73,11 +80,14 @@ namespace GUCera.student
                 Label l4 = new Label();
                 Label l5 = new Label();
                 Label l6 = new Label();
+                Label l7 = new Label();
                 Label instructorOrStudent = new Label();
                 Label userTy = new Label(); 
+
                 l1.Text = fn + " " + ln;
                 l2.Text = id;
                 l3.Text = ps;
+
                 if (Session["userType"].Equals(0)) {
                     l4.Text = gp;
                     instructorOrStudent.Text = "GPA :";
@@ -90,7 +100,7 @@ namespace GUCera.student
                 }
                 l5.Text = em;
                 l6.Text = ad;
-
+                l7.Text = ge;
                 userType.Controls.Add(userTy) ; 
                 fullName.Controls.Add(l1);
                 userID.Controls.Add(l2);
@@ -98,6 +108,7 @@ namespace GUCera.student
 
                 inOrSt.Controls.Add(instructorOrStudent); 
                 inOrStValue.Controls.Add(l4);
+                gender.Controls.Add(l7); 
                 email.Controls.Add(l5);
                 address.Controls.Add(l6);
 
