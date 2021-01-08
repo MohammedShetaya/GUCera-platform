@@ -3,4 +3,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+
+    <asp:Panel Class="container" ID="available_Courses" runat="server">
+
+
+
+    </asp:Panel>
+
+    <asp:Panel Class="container" ID="Course" runat="server">
+
+    </asp:Panel>
+    
+
+
+
 </asp:Content>

@@ -23,7 +23,7 @@ namespace GUCera.student
 
         protected void slideButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("");
+            Response.Redirect("~/Course/availableCourses.aspx");
         }
     }
 }

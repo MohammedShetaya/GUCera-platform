@@ -74,6 +74,7 @@
     <Content Include="admin\AdminDefault.aspx" />
     <Content Include="assignment\assignments.aspx" />
     <Content Include="Course\availableCourses.aspx" />
+    <Content Include="Course\CoursePage.aspx" />
     <Content Include="Default.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="Course\availableCourses.aspx.designer.cs">
       <DependentUpon>availableCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Course\CoursePage.aspx.cs">
+      <DependentUpon>CoursePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Course\CoursePage.aspx.designer.cs">
+      <DependentUpon>CoursePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
