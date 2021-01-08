@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AddTelephoneNumber.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EditProfile.aspx" />
     <Content Include="instructor\InstructorSignUp.aspx" />
     <Content Include="script\script.js" />
     <Content Include="SignIn.aspx" />
@@ -92,6 +93,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructor\InstructorSignUp.aspx.cs">
       <DependentUpon>InstructorSignUp.aspx</DependentUpon>
