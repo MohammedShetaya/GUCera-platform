@@ -102,23 +102,7 @@ namespace GUCera.student
                 address.Controls.Add(l6);
 
 
-                // handling connected services tab
-                Label slide1Label = new Label();
-                Label slide2Label = new Label();
-                if (Session["userType"].Equals(0))
-                {
-                    slide1Label.Text = "There are many usefull courses in which you can enroll";
-                    slidePanel1.Controls.Add(slide1Label);
-                    slideButton1.Text = "Show Courses";
-
-                    slide2Label.Text = "We are offering you powerfull promocodes";
-                    slidePanel2.Controls.Add(slide2Label);
-                    slideButton2.Text = "Discover Promocodes";
-                }
-                else
-                {
-
-                }
+              
             }
             else
                 Response.Redirect("~/SignIn.aspx");

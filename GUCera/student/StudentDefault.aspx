@@ -25,10 +25,10 @@
                 <div class="carousel-caption d-none d-md-block">
 
                     <h1>
-                        <asp:Panel ID="slidePanel1" runat="server"></asp:Panel>
+                        <asp:Panel ID="slidePanel1" runat="server">You can Enroll to many usefull courses</asp:Panel>
                     </h1>
 
-                    <asp:Button ID="slideButton1" runat="server" class="btn btn-primary" />
+                    <asp:Button ID="slideButton1" runat="server" class="btn btn-primary" Text="Show Courses" OnClick="slideButton1_Click"/>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">

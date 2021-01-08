@@ -73,6 +73,7 @@
     <Content Include="AddTelephoneNumber.aspx" />
     <Content Include="admin\AdminDefault.aspx" />
     <Content Include="assignment\assignments.aspx" />
+    <Content Include="Course\availableCourses.aspx" />
     <Content Include="Default.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="assignment\assignments.aspx.designer.cs">
       <DependentUpon>assignments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Course\availableCourses.aspx.cs">
+      <DependentUpon>availableCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Course\availableCourses.aspx.designer.cs">
+      <DependentUpon>availableCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
