@@ -70,7 +70,7 @@ namespace GUCera.Course
             }
             else
             {
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("~/SignIn.aspx");
             }
         }
 

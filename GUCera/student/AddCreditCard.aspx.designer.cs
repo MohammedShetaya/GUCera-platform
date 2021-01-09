@@ -11,80 +11,53 @@ namespace GUCera
 {
 
 
-    public partial class EditProfile
+    public partial class AddCreditCard
     {
 
         /// <summary>
-        /// profileName control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel profileName;
+        protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
-        /// userType control.
+        /// cardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel userType;
+        protected global::System.Web.UI.WebControls.TextBox cardNumber;
 
         /// <summary>
-        /// firstName control.
+        /// ccmonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstName;
+        protected global::System.Web.UI.WebControls.DropDownList ccmonth;
 
         /// <summary>
-        /// lastName control.
+        /// ccyear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastName;
+        protected global::System.Web.UI.WebControls.DropDownList ccyear;
 
         /// <summary>
-        /// password control.
+        /// cvv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-
-        /// <summary>
-        /// male control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton male;
-
-        /// <summary>
-        /// female control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton female;
-
-        /// <summary>
-        /// email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox cvv;
 
         /// <summary>
         /// incorrectInput control.
@@ -96,21 +69,12 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.Panel incorrectInput;
 
         /// <summary>
-        /// address control.
+        /// addCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address;
-
-        /// <summary>
-        /// edit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button edit;
+        protected global::System.Web.UI.WebControls.Button addCard;
     }
 }

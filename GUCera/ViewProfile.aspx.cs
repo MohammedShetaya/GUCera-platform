@@ -133,6 +133,23 @@ namespace GUCera.student
                     phoneNumbers.Controls.Add(n);
                 }
 
+                //check if the user is student
+
+                rdr.Close();
+                conn.Close();
+
+                SqlCommand cmd2 = new SqlCommand("select * from Student where id = @id", conn);
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Parameters.Add(new SqlParameter("id", Session["userID"]));
+                
+                conn.Open();
+                rdr = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if(!rdr.HasRows)
+                {
+                    addCard.CssClass = "invisible" ; 
+                }
+
 
             }
             else
@@ -146,6 +163,18 @@ namespace GUCera.student
                 Response.Redirect("~/AddTelephoneNumber.aspx");
             }
             else {
+                Response.Redirect("~/SignIn.aspx");
+            }
+        }
+
+        protected void addCreditCard_Click(object sender, EventArgs e)
+        {
+            if (Session["userID"] != null)
+            {
+                Response.Redirect("~/student/AddCreditCard.aspx");
+            }
+            else
+            {
                 Response.Redirect("~/SignIn.aspx");
             }
         }

@@ -71,12 +71,30 @@ namespace GUCera
             else
             cmd.Parameters.Add("@address" ,ad);
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
 
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
 
-            Response.Redirect("~/ViewProfile.aspx") ;
+                Response.Redirect("~/ViewProfile.aspx");
+
+            }
+
+            catch (Exception ex)
+            {
+                if (ex is SqlException)
+                {
+                    Label l = new Label();
+                    l.Text = "Email already Exists by another user";
+                    incorrectInput.Controls.Add(l);
+                }
+                else
+                {
+                }
+            }
+
 
         }
     }

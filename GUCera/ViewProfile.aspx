@@ -137,10 +137,9 @@
                                         <hr />
 
                                         <div class="row">
-                                            <div class="col-sm"></div>
-                                            <div class="col-sm"></div>
-                                            <div class="col-sm">
-                                            <asp:Button ID="edit" runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" style="margin-left:30px" OnClick="addNumber_Click"></asp:Button>
+                                            <div class="col-md-5 ml-auto">
+                                            <asp:Button ID="addCard" runat="server" class="btn btn-lg btn-outline-success " Text="Add Credit Card" style="margin-left:30px" OnClick="addCreditCard_Click"></asp:Button>
+                                            <asp:Button ID="addNum" runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" style="margin-left:30px" OnClick="addNumber_Click"></asp:Button>
                                         </div>
                                        </div>
                                         
