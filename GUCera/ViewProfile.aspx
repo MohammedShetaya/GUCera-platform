@@ -14,6 +14,7 @@
 
                     <div class="card-body">
                         <div class="card-title mb-4">
+
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
                                     <img src="..\images\userIcon.png" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
@@ -28,8 +29,11 @@
                                         <asp:Panel ID="userType" runat="server"></asp:Panel>
                                     </h5>
                                 </div>
-                                <div class="ml-auto">
-                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+
+                                <div class="col-md-4 ml-auto">
+                                   <h5>Phone Numbers</h5>   
+                                    <asp:Panel ID="phoneNumbers" runat="server">
+                                    </asp:Panel>
                                 </div>
                             </div>
                         </div>
@@ -129,6 +133,16 @@
                                                 <asp:Panel ID="address" runat="server"></asp:Panel>
                                             </div>
                                         </div>
+
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm"></div>
+                                            <div class="col-sm"></div>
+                                            <div class="col-sm">
+                                            <asp:Button ID="edit" runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" style="margin-left:30px" OnClick="addNumber_Click"></asp:Button>
+                                        </div>
+                                       </div>
                                         
 
                                     </div>

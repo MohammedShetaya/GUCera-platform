@@ -112,11 +112,42 @@ namespace GUCera.student
                 email.Controls.Add(l5);
                 address.Controls.Add(l6);
 
+                //return all phone numbers and diplay them
 
-              
+                rdr.Close();
+                conn.Close();
+
+                SqlCommand cmd1 = new SqlCommand("select mobileNumber from UserMobileNumber where id = @id", conn);
+                cmd1.CommandType = CommandType.Text;
+                cmd1.Parameters.Add(new SqlParameter("id", Session["userID"]));
+
+                conn.Open();
+                rdr = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (rdr.Read()) {
+                    string s = rdr.GetString(rdr.GetOrdinal("mobileNumber")) ;
+                    Label m = new Label();
+                    Panel n = new Panel();
+                    m.Text = s;
+                    n.Controls.Add(m);
+                    phoneNumbers.Controls.Add(n);
+                }
+
+
             }
             else
                 Response.Redirect("~/SignIn.aspx");
+        }
+
+        protected void addNumber_Click(object sender, EventArgs e)
+        {
+            if (Session["userID"] != null)
+            {
+                Response.Redirect("~/AddTelephoneNumber.aspx");
+            }
+            else {
+                Response.Redirect("~/SignIn.aspx");
+            }
         }
     }
 }

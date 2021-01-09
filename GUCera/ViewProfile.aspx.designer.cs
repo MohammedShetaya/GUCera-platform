@@ -33,6 +33,15 @@ namespace GUCera.student
         protected global::System.Web.UI.WebControls.Panel userType;
 
         /// <summary>
+        /// phoneNumbers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel phoneNumbers;
+
+        /// <summary>
         /// fullName control.
         /// </summary>
         /// <remarks>
@@ -103,5 +112,14 @@ namespace GUCera.student
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel address;
+
+        /// <summary>
+        /// edit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button edit;
     }
 }
