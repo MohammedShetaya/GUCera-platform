@@ -33,22 +33,22 @@ namespace GUCera
         protected global::System.Web.UI.WebControls.Panel userType;
 
         /// <summary>
-        /// fullName control.
+        /// firstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel fullName;
+        protected global::System.Web.UI.WebControls.TextBox firstName;
 
         /// <summary>
-        /// userID control.
+        /// lastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel userID;
+        protected global::System.Web.UI.WebControls.TextBox lastName;
 
         /// <summary>
         /// password control.
@@ -57,34 +57,25 @@ namespace GUCera
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel password;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// inOrSt control.
+        /// male control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel inOrSt;
+        protected global::System.Web.UI.WebControls.RadioButton male;
 
         /// <summary>
-        /// inOrStValue control.
+        /// female control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel inOrStValue;
-
-        /// <summary>
-        /// gender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel gender;
+        protected global::System.Web.UI.WebControls.RadioButton female;
 
         /// <summary>
         /// email control.
@@ -93,7 +84,7 @@ namespace GUCera
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel email;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
         /// address control.
@@ -102,6 +93,15 @@ namespace GUCera
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel address;
+        protected global::System.Web.UI.WebControls.TextBox address;
+
+        /// <summary>
+        /// edit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button edit;
     }
 }

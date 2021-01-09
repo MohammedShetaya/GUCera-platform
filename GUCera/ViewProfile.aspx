@@ -7,7 +7,7 @@
 
 
 
-    <div class="container" style="margin-top: 40px">
+    <div class="container" style="margin-top: 50px ; margin-bottom:40px">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -38,7 +38,7 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="basicInfo-tab" data-bs-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                        <a class="nav-link active" id="basicInfo-tab" data-bs-toggle="tab" href="..\ViewProfile.aspx" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="..\EditProfile.aspx" role="tab" aria-controls="connectedServices" aria-selected="false">Edit Profile</a>
@@ -129,8 +129,7 @@
                                                 <asp:Panel ID="address" runat="server"></asp:Panel>
                                             </div>
                                         </div>
-                                        <hr />
-
+                                        
 
                                     </div>
 
