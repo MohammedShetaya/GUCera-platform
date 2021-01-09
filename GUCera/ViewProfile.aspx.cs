@@ -24,14 +24,14 @@ namespace GUCera.student
                 if (Session["userType"].Equals(0))
                 {
 
-                    cmd = new SqlCommand("viewStudentProfile", conn);
+                    cmd = new SqlCommand("viewMyProfile", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id", Session["userID"]);
 
                 }
                 else
                 {
-                    cmd = new SqlCommand("viewInstructorProfile", conn);
+                    cmd = new SqlCommand("viewMyProfile", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@instrId", Session["userID"]);
                 }
