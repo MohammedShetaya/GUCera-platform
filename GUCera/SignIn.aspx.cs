@@ -24,6 +24,7 @@ namespace GUCera
         {
 
 
+
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
 

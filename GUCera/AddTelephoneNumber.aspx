@@ -3,15 +3,41 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-  <div class="page-header">
-    <h1>Please enter your number</h1>      
-  </div>
+        <div class="jumbotron jumbotron-fluid">
+           <div class="container">
+                <h1 class="display-4">Please Add Your Phone Number</h1>
+           </div>
+        </div>
 
- <div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-</div>
-  
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+               <div class="input-group input-group-lg">
+                   <div class="input-group-prepend">
+                     <span class="input-group-text" id="inputGroup-sizing-lg">Number</span>
+                   </div>
+                 <asp:TextBox ID="addNumber" TextMode="SingleLine" runat="server" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    <hr class="colorgraph" />
+
+       <div class="row" style="margin-top:30px;">
+           
+           <div class="col-4"></div>
+            <div class="col-8">
+                
+                <span >
+                   <asp:Button  runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" style="margin-left:30px" OnClick="addNumber_Click"></asp:Button>
+                </span>
+
+                <span style="font-size:1.3em">
+                    <asp:Label ID="incorrectInput" class="col-sm" runat="server" ></asp:Label>
+                </span>
+            </div>
+            
+       </div>
+        
+      
 </asp:Content>

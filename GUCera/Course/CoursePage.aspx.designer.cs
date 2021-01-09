@@ -7,11 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera
+namespace GUCera.Course
 {
 
 
-    public partial class Default
+    public partial class CoursePage
     {
+
+        /// <summary>
+        /// CoursePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel CoursePanel;
     }
 }
