@@ -13,7 +13,6 @@ namespace GUCera
         {
             if (Session["userID"] != null)
             {
-                Console.WriteLine(Session["userType"]);
                 if (Session["userType"].ToString().Equals("0"))
                 {
                     Response.Redirect("~/student/StudentDefault.aspx");

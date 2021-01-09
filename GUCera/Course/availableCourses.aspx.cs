@@ -42,17 +42,22 @@ namespace GUCera.Course
                     cmd1.Parameters.Add(new SqlParameter("name", courseName));
                     conn1.Open();
                     SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
-
+                    
                     if (rdr1.Read())
                     {
 
                         String courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        Button button = new Button();
+                        button.ID = courseName;
+                        button.Text = "Show Courses";
+                        button.CssClass = "btn btn-primary";
+                        button.Click += new EventHandler(ShowCourse_Click);
 
-                        String s = "<div class=\"card\" style=\"width: 18rem;\"><div class=\"card-body\"><h5 class=\"card-title\">" + courseName + "</h5><h6 class=\"card-subtitle mb-2 text-muted\">Available</h6><p class=\"card-text\">" + courseDescription + "</p><a href = \"#\" class=\"card-link btn btn-primary\" ID=\"" + courseName + "\">Show Course</a></div></div>";
+                        String s = "<div class=\"card\" style=\"width: 18rem;\"><div class=\"card-body\"><h5 class=\"card-title\">" + courseName + "</h5><h6 class=\"card-subtitle mb-2 text-muted\">Available</h6><p class=\"card-text\">" + courseDescription + "</p>";
 
-                        available_Courses.Controls.Add(new Literal() { Text = "<div class=\"col-3\">" + s + "</div>" });
-
-
+                        available_Courses.Controls.Add(new Literal() { Text = "<div class=\"col-3\">" + s });
+                        available_Courses.Controls.Add(button);
+                        available_Courses.Controls.Add(new Literal() { Text = "</div></div></div>" });
 
                     }
 
@@ -76,9 +81,9 @@ namespace GUCera.Course
 
         protected void ShowCourse_Click(object sender, EventArgs e)
         {
-            available_Courses.Controls.Clear();
-            LinkButton linkButton = (LinkButton)sender;
-            string courseName = linkButton.ID;
+            
+            Button button = (Button) sender;
+            string courseName = button.ID;
 
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
@@ -94,17 +99,23 @@ namespace GUCera.Course
                 courseID = rdr.GetInt32(rdr.GetOrdinal("id"));
             }
 
-
+            conn.Close();
             SqlConnection conn1 = new SqlConnection(connString);
 
-            SqlCommand cmd1 = new SqlCommand("courseInformation", conn);
+            SqlCommand cmd1 = new SqlCommand("courseInformation", conn1);
             cmd1.CommandType = CommandType.StoredProcedure;
             cmd1.Parameters.Add("@id", courseID);
             conn1.Open();
             SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
-            Course.Controls.Add(new Literal() { Text = "<h1>" + courseName + " " + courseID + "</h1>" });
+
+            Response.Redirect("~/Course/CoursePage.aspx?courseName=" + courseName +"&courseID="+ courseID);
 
 
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
