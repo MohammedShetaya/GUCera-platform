@@ -92,15 +92,7 @@
                                         </div>
                                         <hr />
 
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight: bold;">Content :</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                <asp:Panel ID="content" runat="server"></asp:Panel>
-                                            </div>
-                                        </div>
-                                        <hr />
+                                      
 
 
                                         <div class="row">

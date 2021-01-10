@@ -26,11 +26,8 @@ namespace GUCera.Course
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-                //String s = "<div class=\"card\" style=\"width: 18rem; \">< div class=\"card-body\"><h5 class=\"card-title\">Card title</h5><h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6><p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p><a href = \"#\" class=\"card-link\">Card link</a><a href = \"#\" class=\"card-link\">Another link</a></div></div>";
 
 
-                int i = 0;
-                available_Courses.Controls.Add(new Literal() { Text = "<div class=\"row\">" });
                 while (rdr.Read())
                 {
 
@@ -48,25 +45,17 @@ namespace GUCera.Course
                         String courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
                         Button button = new Button();
                         button.ID = courseName;
-                        button.Text = "Show Courses";
-                        button.CssClass = "btn btn-primary";
+                        button.Text = "Show Course";
+                        button.CssClass = "btn btn-outline-light btn-sm";
                         button.Click += new EventHandler(ShowCourse_Click);
-
-                        String s = "<div class=\"card\" style=\"width: 18rem;\"><div class=\"card-body\"><h5 class=\"card-title\">" + courseName + "</h5><h6 class=\"card-subtitle mb-2 text-muted\">Available</h6><p class=\"card-text\">" + courseDescription + "</p>";
-
-                        available_Courses.Controls.Add(new Literal() { Text = "<div class=\"col-3\">" + s });
+                        String s = "<div class=\"col-4\"> <div class=\"card mb-4 text-white bg-secondary\"><img class=\"card-img-top\" src=\"..\\images\\courses.jpg\" alt=\"Course\"/> <div class=\"card-body\"> <h5 class=\"cardTitle\">" + courseName + "</h5><h6 class=\"card-subtitle mb-2 text-light\">Available</h6><p class=\"card-text\" style = \"height:100px;\">" + courseDescription + "</p>";
+                        available_Courses.Controls.Add(new Literal() { Text = s });
                         available_Courses.Controls.Add(button);
                         available_Courses.Controls.Add(new Literal() { Text = "</div></div></div>" });
 
                     }
 
-                    //if (i % 4 == 1)
-                    //{
-                    //    available_Courses.Controls.Add(new Literal() { Text = "</div>" });
-                    //    available_Courses.Controls.Add(new Literal() { Text = "<div class=\"row\">" });
-                    //}
-
-                    i++;
+                  
                 }
                 available_Courses.Controls.Add(new Literal() { Text = "</div>" });
 

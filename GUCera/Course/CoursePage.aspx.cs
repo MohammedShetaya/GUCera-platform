@@ -39,14 +39,14 @@ namespace GUCera.Course
                     courseDescriptionLabel.Text = rdr.GetString(rdr.GetOrdinal("courseDescription"));
                     Label priceLabel = new Label();
                     priceLabel.Text = rdr.GetDecimal(rdr.GetOrdinal("price")).ToString();
-                    Label contentLabel = new Label();
-                    contentLabel.Text = rdr.GetString(rdr.GetOrdinal("content"));
+                    //Label contentLabel = new Label();
+                    //contentLabel.Text = rdr.GetString(rdr.GetOrdinal("content"));
                     Label courseNameLabel = new Label();
                     courseNameLabel.Text = courseName;
 
                     courseDescription.Controls.Add(courseDescriptionLabel);
                     price.Controls.Add(priceLabel);
-                    content.Controls.Add(contentLabel);
+                    //content.Controls.Add(contentLabel);
                     CourseName.Controls.Add(courseNameLabel);
 
                     conn.Close();

@@ -76,5 +76,33 @@ namespace GUCera
 
         }
 
+        protected void AvailableCourses_load(object sender, EventArgs e)
+        {
+            if (Session["userID"] != null)
+            {
+                string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
+                SqlConnection conn = new SqlConnection(connString);
+
+
+                SqlCommand cmd = new SqlCommand("select id from Student where id = @i", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("i", Session["userID"]));
+                conn.Open();
+
+                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (!rdr.HasRows)
+                {
+                    available.Controls.Clear();
+                }
+            }
+            else
+            {
+
+                available.Controls.Clear();
+
+            }
+
+        }
+
     }
 }
