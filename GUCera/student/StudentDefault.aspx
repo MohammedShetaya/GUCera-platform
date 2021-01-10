@@ -10,7 +10,8 @@
         </div>
     </div>
 
-    <%-- Page Content --%>
+    <div class="container">
+        <%-- Page Content --%>
     <div ID="slidesContainer">
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -52,4 +53,5 @@
         </a>
     </div>
     </div>
+ </div>
 </asp:Content>

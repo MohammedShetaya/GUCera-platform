@@ -34,6 +34,14 @@
                </li>
 
                <li class="nav-item">
+                 <asp:Panel runat="server" ID="progress" OnLoad="CoursesInProgress_load">
+                  <a class="nav-link " href="..\student\CoursesInProgress.aspx">
+                          Courses in progress
+                  </a>
+                   </asp:Panel>
+               </li>
+
+               <li class="nav-item">
                    <asp:Panel runat="server" ID="signIn" OnLoad="signIn_Load">
                   <a class="nav-link" href="..\SignIn.aspx">Sign in</a>
                   </asp:Panel>
