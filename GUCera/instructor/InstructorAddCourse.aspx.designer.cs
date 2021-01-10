@@ -11,34 +11,52 @@ namespace GUCera.instructor
 {
 
 
-    public partial class InstructorDefault
+    public partial class InstructorAddCourse
     {
 
         /// <summary>
-        /// Image1 control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
-        /// slidePanel1 control.
+        /// Credit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel slidePanel1;
+        protected global::System.Web.UI.WebControls.TextBox Credit;
 
         /// <summary>
-        /// slideButton1 control.
+        /// Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button slideButton1;
+        protected global::System.Web.UI.WebControls.TextBox Price;
+
+        /// <summary>
+        /// incorrectInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel incorrectInput;
+
+        /// <summary>
+        /// addCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addCard;
     }
 }

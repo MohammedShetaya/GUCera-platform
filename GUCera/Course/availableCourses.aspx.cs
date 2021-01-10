@@ -41,8 +41,15 @@ namespace GUCera.Course
                     
                     if (rdr1.Read())
                     {
-
-                        String courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        String courseDescription = "";
+                        try
+                        {
+                            courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        }
+                        catch (Exception ex)
+                        {
+                            courseDescription = "";
+                        }
                         Button button = new Button();
                         button.ID = courseName;
                         button.Text = "Show Course";

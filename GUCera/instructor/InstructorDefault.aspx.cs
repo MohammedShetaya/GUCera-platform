@@ -11,7 +11,18 @@ namespace GUCera.instructor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] != null)
+            {
 
+            }
+            else
+            {
+                Response.Redirect("~/SignIN.aspx");
+            }
+        }
+        protected void AddCoursesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/instructor/InstructorAddCourse.aspx");
         }
     }
 }

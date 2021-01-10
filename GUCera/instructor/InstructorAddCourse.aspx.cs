@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
 using System.Web.Configuration;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace GUCera
+namespace GUCera.instructor
 {
-    public partial class AddCreditCard : System.Web.UI.Page
+    public partial class InstructorAddCourse : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userID"] == null)
+            if (Session["userID"] != null)
+            {
+
+            }
+            else
             {
                 Response.Redirect("~/SignIn.aspx");
             }
@@ -23,25 +27,22 @@ namespace GUCera
         protected void addCard_Click(object sender, EventArgs e)
         {
             string nam = name.Text;
-            string num = cardNumber.Text;
-            string mon = ccmonth.SelectedValue;
-            string yer = ccyear.SelectedValue;
-            string cv  = cvv.Text;
-
+            string cred = Credit.Text;
+            string price = Price.Text;
             
-            DateTime date = new DateTime(int.Parse(yer) , int.Parse(mon) , 30 );
-        
+
+
+
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
 
-            SqlCommand cmd = new SqlCommand("addCreditCard", conn);
+            SqlCommand cmd = new SqlCommand("InstAddCourse", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add("@sid" , Session["userID"]);
-            cmd.Parameters.Add("@number", num);
-            cmd.Parameters.Add("@cardHolderName", nam) ;
-            cmd.Parameters.Add("@expiryDate", date);
-            cmd.Parameters.Add("@cvv", cv) ;
+            cmd.Parameters.Add("@creditHours", cred);
+            cmd.Parameters.Add("@name", nam);
+            cmd.Parameters.Add("@price", price);
+            cmd.Parameters.Add("@instructorId", Session["userID"]);
 
             try
             {
@@ -55,16 +56,11 @@ namespace GUCera
 
             catch (Exception ex)
             {
-                if (ex is SqlException)
-                {
+                
                     Label l = new Label();
-
-                    l.Text = "Incorrect Card Information or Card already Exists";
+                    l.Text = "Incorrect Course Information or Course name already exists";
                     incorrectInput.Controls.Add(l);
-                }
-                else
-                {
-                }
+                
             }
         }
     }

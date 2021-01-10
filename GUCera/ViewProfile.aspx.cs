@@ -147,7 +147,12 @@ namespace GUCera.student
 
                 if(!rdr.HasRows)
                 {
-                    addCard.CssClass = "invisible" ; 
+                    addCard.CssClass = "invisible" ;
+                    certifiedCourses.CssClass = "invisible";
+                }
+                else
+                {
+                    addCourse.CssClass = "invisible";
                 }
 
 
@@ -181,6 +186,11 @@ namespace GUCera.student
         protected void CertifiedCourses_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Course/certifiedCourses.aspx");
+        }
+
+        protected void addCourse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/instructor/InstructorAddCourse.aspx");
         }
     }
 }

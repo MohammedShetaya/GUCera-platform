@@ -32,15 +32,20 @@ namespace GUCera.Course
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 //
                 if (rdr.Read())
-                { 
-                    
+                {
+
 
                     Label courseDescriptionLabel = new Label();
-                    courseDescriptionLabel.Text = rdr.GetString(rdr.GetOrdinal("courseDescription"));
+                    try
+                    {
+                        courseDescriptionLabel.Text = rdr.GetString(rdr.GetOrdinal("courseDescription"));
+                    }
+                    catch (Exception ex)
+                    {
+                        courseDescriptionLabel.Text = "";
+                    }
                     Label priceLabel = new Label();
                     priceLabel.Text = rdr.GetDecimal(rdr.GetOrdinal("price")).ToString();
-                    //Label contentLabel = new Label();
-                    //contentLabel.Text = rdr.GetString(rdr.GetOrdinal("content"));
                     Label courseNameLabel = new Label();
                     courseNameLabel.Text = courseName;
 
@@ -61,18 +66,19 @@ namespace GUCera.Course
                     SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
 
                     //
-                    while (rdr1.Read()){
+                    while (rdr1.Read())
+                    {
                         string s = rdr1.GetString(rdr1.GetOrdinal("firstName")) + " " + rdr1.GetString(rdr1.GetOrdinal("lastName"));
                         Label m = new Label();
                         Panel n = new Panel();
                         m.Text = s;
                         n.Controls.Add(m);
                         instuctorsNames.Controls.Add(n);
-           
+
                     }
                     conn1.Close();
 
-                }                
+                }
 
             }
             else

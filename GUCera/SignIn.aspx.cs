@@ -31,7 +31,7 @@ namespace GUCera
             SqlCommand cmd = new SqlCommand("userLogin", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            int u = Int16.Parse(username.Text);
+            int u = Int32.Parse(username.Text);
             string p = password.Text;
 
             cmd.Parameters.Add("@id", u);
@@ -42,11 +42,18 @@ namespace GUCera
 
             SqlParameter type = cmd.Parameters.Add("@type", SqlDbType.Int);
             type.Direction = ParameterDirection.Output;
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Label incorrectLabel = new Label();
+                incorrectLabel.Text = "Incorrect Username or Password";
+                incorrect.Controls.Add(incorrectLabel);
+            }
 
             if (success.Value.ToString().Equals("1"))
             {

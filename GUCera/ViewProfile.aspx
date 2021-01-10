@@ -7,7 +7,7 @@
 
 
 
-    <div class="container" style="margin-top: 50px ; margin-bottom:40px">
+    <div class="container" style="margin-top: 50px; margin-bottom: 40px">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -31,7 +31,7 @@
                                 </div>
 
                                 <div class="col-md-4 ml-auto">
-                                   <h5>Phone Numbers</h5>   
+                                    <h5>Phone Numbers</h5>
                                     <asp:Panel ID="phoneNumbers" runat="server">
                                     </asp:Panel>
                                 </div>
@@ -137,17 +137,20 @@
                                         <hr />
 
                                         <div class="row">
-                                            <div class="col-md-9 ml-auto">
-                                            <asp:Button ID="addCard" runat="server" class="btn btn-lg btn-outline-success " Text="Add Credit Card" style="margin-left:30px" OnClick="addCreditCard_Click"></asp:Button>
-                                            <asp:Button ID="addNum" runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" style="margin-left:30px" OnClick="addNumber_Click"></asp:Button>
-                                            <asp:Button ID="certifiedCourses" runat="server" class="btn btn-lg btn-outline-success " Text="Show Certificates" style="margin-left:30px" OnClick="CertifiedCourses_Click"></asp:Button>
+                                            <div class="col-md-12 ml-auto">
+                                                <asp:Button ID="certifiedCourses" runat="server" class="btn btn-lg btn-outline-success " Text="Show Certificates" Style="margin-left: 30px" OnClick="CertifiedCourses_Click"></asp:Button>
+                                                <asp:Button ID="addCard" runat="server" class="btn btn-lg btn-outline-success " Text="Add Credit Card" Style="margin-left: 30px" OnClick="addCreditCard_Click"></asp:Button>
+                                                <asp:Button ID="addNum" runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" Style="margin-left: 30px" OnClick="addNumber_Click"></asp:Button>
+
+                                                <asp:Button ID="addCourse" runat="server" class="btn btn-lg btn-outline-success " Text="Add Course" Style="margin-left: 30px" OnClick="addCourse_Click"></asp:Button>
+
+                                            </div>
                                         </div>
-                                       </div>
-                                        
+
 
                                     </div>
 
-                                </div> --------
+                                </div>
 
 
                             </div>
