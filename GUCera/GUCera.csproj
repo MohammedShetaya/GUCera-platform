@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\ListNonAcceptedCourses.aspx" />
     <Content Include="Course\certifiedCourses.aspx" />
     <Content Include="Course\CourseCertificate.aspx" />
     <Content Include="Course\InProgressCoursePage.aspx" />
@@ -78,6 +79,7 @@
     <Content Include="student\AddCreditCard.aspx" />
     <Content Include="AddTelephoneNumber.aspx" />
     <Content Include="admin\AdminDefault.aspx" />
+    <Content Include="admin\ListAllCourses.aspx" />
     <Content Include="assignment\assignments.aspx" />
     <Content Include="Course\availableCourses.aspx" />
     <Content Include="Course\CoursePage.aspx" />
@@ -102,6 +104,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\ListNonAcceptedCourses.aspx.cs">
+      <DependentUpon>ListNonAcceptedCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ListNonAcceptedCourses.aspx.designer.cs">
+      <DependentUpon>ListNonAcceptedCourses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Course\certifiedCourses.aspx.cs">
       <DependentUpon>certifiedCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +159,13 @@
     </Compile>
     <Compile Include="admin\AdminDefault.aspx.designer.cs">
       <DependentUpon>AdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ListAllCourses.aspx.cs">
+      <DependentUpon>ListAllCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ListAllCourses.aspx.designer.cs">
+      <DependentUpon>ListAllCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="assignment\assignments.aspx.cs">
       <DependentUpon>assignments.aspx</DependentUpon>

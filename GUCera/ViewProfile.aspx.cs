@@ -31,7 +31,7 @@ namespace GUCera.student
                 }
                 else
                 {
-                    cmd = new SqlCommand("viewInstructorProfile", conn);
+                    cmd = new SqlCommand("viewMyProfile", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@instrId", Session["userID"]);
                 }
