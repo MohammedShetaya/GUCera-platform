@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Enrollment.aspx.cs" Inherits="GUCera.Course.Enrollment" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="certifiedCourses.aspx.cs" Inherits="GUCera.Course.certifiedCourses" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Please choose your Insructor from the list below</h1>
+            <h1 class="display-4">Please choose the course that you want to show its certificate</h1>
         </div>
 
         <div class="padding"  style="padding-bottom:50px;margin-top:30px;">
@@ -14,27 +13,29 @@
         <div class="col-6">
             <div class="card">
                 <div class="card-header">
-                    <strong>Instructors</strong>
+                    <strong>Certified Courses</strong>
                     
                 </div>
                 <div class="card-body">
                                     
                     <div class="row">
                         <div class="form-group col-sm-4">
-                            <asp:DropDownList runat="server" class="form-control" id="instructorsPanel">                                
+                            <asp:DropDownList runat="server" class="form-control" id="certifiedCoursesPanel">                                
                             
                             </asp:DropDownList>
                         </div>
+
+                        <asp:Panel runat="server" class="text-danger" id="Panel1">
+
+                    </asp:Panel>
                        
                       
                     </div>
 
-                    <asp:Panel runat="server" class="text-danger" id="Panel1">
-
-                    </asp:Panel>
+                    
                 </div>
                 <div class="card-footer">
-                    <asp:Button ID="addCard" OnClick="Enroll_Click" class="btn btn-sm btn-success float-right" Text="Enroll"  runat="server"></asp:Button>
+                    <asp:Button ID="addCard" OnClick="CourseCertificate_Click" class="btn btn-sm btn-success float-right" Text="Show Certificate"  runat="server"></asp:Button>
                     
                 </div>
             </div>

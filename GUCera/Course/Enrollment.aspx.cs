@@ -33,13 +33,10 @@ namespace GUCera.Course
                     String fn = rdr1.GetString(rdr1.GetOrdinal("firstName"));
                     String ln = rdr1.GetString(rdr1.GetOrdinal("lastName"));
                     int instID = rdr1.GetInt32(rdr1.GetOrdinal("id"));
-                    Button b = new Button();
-                    b.Text = fn + " " + ln;
-                    b.CssClass = "dropdown-item";
-                    b.ID = instID.ToString();
-                    b.Click += new EventHandler(chooseInstructor_Click);
-
-                    instructorsPanel.Controls.Add(b);
+                    ListItem l = new ListItem();
+                    l.Text = fn + " " + ln;
+                   l.Value = instID.ToString();
+                    instructorsPanel.Items.Add(l);
                 }
             }
             else
@@ -49,13 +46,22 @@ namespace GUCera.Course
 
         }
 
-        protected void chooseInstructor_Click(object sender, EventArgs e)
+        protected void Enroll_Click(object sender, EventArgs e)
         {
             String courseName = Request.QueryString["courseName"];
             int courseID = Int32.Parse(Request.QueryString["courseID"]);
-            Button button = (Button) sender;
-            int instID = Int32.Parse(button.ID);
-
+            int instID;
+            try
+            {
+                instID = Int32.Parse(instructorsPanel.SelectedValue);
+            }
+            catch (Exception ex)
+            {
+                Label label = new Label();
+                label.Text = "Sorry there no instructors teaching this course right now!";
+                Panel1.Controls.Add(label);
+                return;
+            }
             // connection to database
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
@@ -63,16 +69,24 @@ namespace GUCera.Course
             SqlCommand cmd = new SqlCommand("enrollInCourse", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            
+
 
             cmd.Parameters.Add("@sid", Session["userID"]);
             cmd.Parameters.Add("@cid", courseID);
             cmd.Parameters.Add("@instr", instID);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch
+            {
+                Label label = new Label();
+                label.Text = "You can't enroll this course";
+                Panel1.Controls.Add(label);
+                return;
+            }
             Response.Redirect("~/Default.aspx");
         }
     }

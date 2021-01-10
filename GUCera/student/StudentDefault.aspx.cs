@@ -30,5 +30,9 @@ namespace GUCera.student
         {
             Response.Redirect("~/promocodes.aspx");
         }
+        protected void certificatesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Course/certifiedCourses.aspx");
+        }
     }
 }

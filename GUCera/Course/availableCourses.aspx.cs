@@ -35,7 +35,6 @@ namespace GUCera.Course
                 {
 
                     String courseName = rdr.GetString(rdr.GetOrdinal("name"));
-
                     SqlConnection conn1 = new SqlConnection(connString);
                     SqlCommand cmd1 = new SqlCommand("select courseDescription from Course where name = @name", conn1);
                     cmd1.CommandType = CommandType.Text;

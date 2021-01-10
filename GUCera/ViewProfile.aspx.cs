@@ -178,5 +178,9 @@ namespace GUCera.student
                 Response.Redirect("~/SignIn.aspx");
             }
         }
+        protected void CertifiedCourses_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Course/certifiedCourses.aspx");
+        }
     }
 }
