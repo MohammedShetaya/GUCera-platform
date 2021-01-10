@@ -8,10 +8,12 @@
                 Promocodes
             </h1>
         </div>
+        
+        <asp:Panel Class="container" ID="available_promo" runat="server">
+
+            
+
+        </asp:Panel>
     </div>
-    <asp:Panel Class="container" ID="available_promo" runat="server">
-
-
-
-    </asp:Panel>
+    
 </asp:Content>

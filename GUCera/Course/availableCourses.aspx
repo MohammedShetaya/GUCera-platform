@@ -9,7 +9,7 @@
                 Available Courses
             </h1>
         </div>
-    </div>
+    
 
     <asp:Panel Class="container" ID="available_Courses" runat="server">
 
@@ -17,7 +17,7 @@
 
     </asp:Panel>
 
-    
+    </div>
     
 
 
