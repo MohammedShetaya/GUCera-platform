@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="Course\certifiedCourses.aspx" />
     <Content Include="Course\CourseCertificate.aspx" />
+    <Content Include="Course\InProgressCoursePage.aspx" />
     <Content Include="images\certificate.jpg" />
     <Content Include="student\AddCreditCard.aspx" />
     <Content Include="AddTelephoneNumber.aspx" />
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="Course\CourseCertificate.aspx.designer.cs">
       <DependentUpon>CourseCertificate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Course\InProgressCoursePage.aspx.cs">
+      <DependentUpon>InProgressCoursePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Course\InProgressCoursePage.aspx.designer.cs">
+      <DependentUpon>InProgressCoursePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\AddCreditCard.aspx.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
