@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="AddTelephoneNumber.aspx" />
     <Content Include="admin\AdminDefault.aspx" />
+    <Content Include="admin\ListAllCourses.aspx" />
     <Content Include="assignment\assignments.aspx" />
     <Content Include="Course\availableCourses.aspx" />
     <Content Include="Course\CoursePage.aspx" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="admin\AdminDefault.aspx.designer.cs">
       <DependentUpon>AdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ListAllCourses.aspx.cs">
+      <DependentUpon>ListAllCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ListAllCourses.aspx.designer.cs">
+      <DependentUpon>ListAllCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="assignment\assignments.aspx.cs">
       <DependentUpon>assignments.aspx</DependentUpon>
