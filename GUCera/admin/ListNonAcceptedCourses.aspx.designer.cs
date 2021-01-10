@@ -11,7 +11,7 @@ namespace GUCera.admin
 {
 
 
-    public partial class ListAllCourses
+    public partial class WebForm1
     {
 
         /// <summary>

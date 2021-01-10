@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListAllCourses.aspx.cs" Inherits="GUCera.admin.ListAllCourses" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListNonAcceptedCourses.aspx.cs" Inherits="GUCera.admin.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-       <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1>All Courses
+            <h1>Non Accepted Courses
             </h1>
         </div>
     </div>

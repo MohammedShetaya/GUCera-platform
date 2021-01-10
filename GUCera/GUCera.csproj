@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\ListNonAcceptedCourses.aspx" />
     <Content Include="Course\certifiedCourses.aspx" />
     <Content Include="Course\CourseCertificate.aspx" />
     <Content Include="Course\InProgressCoursePage.aspx" />
@@ -102,6 +103,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\ListNonAcceptedCourses.aspx.cs">
+      <DependentUpon>ListNonAcceptedCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ListNonAcceptedCourses.aspx.designer.cs">
+      <DependentUpon>ListNonAcceptedCourses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Course\certifiedCourses.aspx.cs">
       <DependentUpon>certifiedCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
