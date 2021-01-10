@@ -11,61 +11,61 @@ namespace GUCera.Course
 {
 
 
-    public partial class CoursePage
+    public partial class InProgressCoursePage
     {
 
         /// <summary>
-        /// pageTitle control.
+        /// courseName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pageTitle;
+        protected global::System.Web.UI.WebControls.Panel courseName;
 
         /// <summary>
-        /// CourseName control.
+        /// creditHours control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CourseName;
+        protected global::System.Web.UI.WebControls.Panel creditHours;
 
         /// <summary>
-        /// courseDescription control.
+        /// courseDisc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel courseDescription;
+        protected global::System.Web.UI.WebControls.Panel courseDisc;
 
         /// <summary>
-        /// price control.
+        /// courseContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel price;
+        protected global::System.Web.UI.WebControls.Panel courseContent;
 
         /// <summary>
-        /// instuctorsNames control.
+        /// courseAssignments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel instuctorsNames;
+        protected global::System.Web.UI.WebControls.Panel courseAssignments;
 
         /// <summary>
-        /// enroll control.
+        /// addFeedback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button enroll;
+        protected global::System.Web.UI.WebControls.TextBox addFeedback;
     }
 }

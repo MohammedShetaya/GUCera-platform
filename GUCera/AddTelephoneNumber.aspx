@@ -23,6 +23,7 @@
         </div>
     <hr class="colorgraph" />
 
+
        <div class="row" style="margin-top:30px;">
            
            <div class="col-4"></div>
@@ -32,8 +33,8 @@
                    <asp:Button  runat="server" class="btn btn-lg btn-outline-success " Text="Add Number" style="margin-left:30px" OnClick="addNumber_Click"></asp:Button>
                 </span>
 
-                <span style="font-size:1.3em">
-                    <asp:Label ID="incorrectInput" class="col-sm" runat="server" ></asp:Label>
+                <span style="font-size:1.2em">
+                    <asp:Label ID="incorrectInput" class="col-sm text-danger" runat="server" ></asp:Label>
                 </span>
             </div>
             

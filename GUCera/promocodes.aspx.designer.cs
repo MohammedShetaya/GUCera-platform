@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera.Course
+namespace GUCera
 {
 
 
-    public partial class availableCourses
+    public partial class promocodes
     {
 
         /// <summary>
-        /// available_Courses control.
+        /// available_promo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel available_Courses;
+        protected global::System.Web.UI.WebControls.Panel available_promo;
     }
 }

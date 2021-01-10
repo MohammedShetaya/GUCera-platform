@@ -114,12 +114,30 @@ namespace GUCera.student
         protected global::System.Web.UI.WebControls.Panel address;
 
         /// <summary>
-        /// edit control.
+        /// addCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button edit;
+        protected global::System.Web.UI.WebControls.Button addCard;
+
+        /// <summary>
+        /// addNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addNum;
+
+        /// <summary>
+        /// certifiedCourses control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button certifiedCourses;
     }
 }

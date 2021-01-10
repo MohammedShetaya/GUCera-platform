@@ -107,13 +107,15 @@
 
 
                                         <div class="row">
+
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight: bold;">Email :</label>
                                             </div>
                                             <div class="col-md-8 col-6">
                                                 <div class="input-group">
                                                     <asp:TextBox  TextMode="SingleLine" ID="email" runat="server" class="form-control"></asp:TextBox>
-                                                 </div>
+                                                </div>
+                                                <asp:Panel ID="incorrectInput" class="text-danger" runat="server"></asp:Panel>
                                             </div>
                                         </div>
                                         <hr />
@@ -135,7 +137,7 @@
                                             <div class="col-sm"></div>
                                             <div class="col-sm"></div>
                                             <div class="col-sm">
-                                            <asp:Button ID="edit" runat="server" class="btn btn-lg btn-outline-danger " Text="Update" style="margin-left:30px" OnClick="edit_Click"></asp:Button>
+                                            <asp:Button ID="edit"  runat="server" class="btn btn-lg btn-outline-danger " Text="Update" style="margin-left:30px" OnClick="edit_Click"></asp:Button>
                                         </div>
                                        </div>
 

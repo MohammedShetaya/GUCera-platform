@@ -21,9 +21,18 @@ namespace GUCera.student
             }
         }
 
-        protected void slideButton1_Click(object sender, EventArgs e)
+        protected void availableCourseButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Course/availableCourses.aspx");
+        }
+
+        protected void promocodesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/promocodes.aspx");
+        }
+        protected void certificatesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Course/certifiedCourses.aspx");
         }
     }
 }
