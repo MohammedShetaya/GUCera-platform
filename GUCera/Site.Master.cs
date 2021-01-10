@@ -18,10 +18,34 @@ namespace GUCera
             {
                 Label l1 = new Label();
                 l1.Text = Session["firstName"] + " " + Session["lastName"]+"  ("+Session["userID"]+")";
-                profile.Controls.Add(l1);               
+                profile.Controls.Add(l1);
+
+                if (Session["usertype"].Equals(0))
+                {
+                    nonAccepted.Controls.Clear();
+                    all.Controls.Clear();
+
+                }
+                else if (Session["usertype"].Equals(1))
+                {
+                    progress.Controls.Clear();
+                    nonAccepted.Controls.Clear();
+                    all.Controls.Clear();
+                    available.Controls.Clear();
+                }
+                else
+                {
+                    progress.Controls.Clear();
+                    available.Controls.Clear();
+                }
 
             }
-            else {
+            else
+            {
+                progress.Controls.Clear();
+                nonAccepted.Controls.Clear();
+                all.Controls.Clear();
+                available.Controls.Clear();
                 logoutPanel.CssClass = "invisible";
             }
         }
@@ -50,57 +74,24 @@ namespace GUCera
 
         protected void CoursesInProgress_load(object sender, EventArgs e)
         {
-            if (Session["userID"] != null)
-            {
-                string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
-                SqlConnection conn = new SqlConnection(connString);
-
-
-                SqlCommand cmd = new SqlCommand("select id from Student where id = @i", conn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("i", Session["userID"]));
-                conn.Open();
-
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                if (!rdr.HasRows)
-                {
-                    progress.Controls.Clear();
-                }
-            }
-            else
-            {
-
-                progress.Controls.Clear();
-
-            }
-
+            
         }
 
         protected void AvailableCourses_load(object sender, EventArgs e)
         {
-            if (Session["userID"] != null)
-            {
-                string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
-                SqlConnection conn = new SqlConnection(connString);
+           
+
+        }
+
+        protected void NonAcceptedCourses_load(object sender, EventArgs e)
+        {
 
 
-                SqlCommand cmd = new SqlCommand("select id from Student where id = @i", conn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("i", Session["userID"]));
-                conn.Open();
+        }
 
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                if (!rdr.HasRows)
-                {
-                    available.Controls.Clear();
-                }
-            }
-            else
-            {
+        protected void AllCourses_load(object sender, EventArgs e)
+        {
 
-                available.Controls.Clear();
-
-            }
 
         }
 

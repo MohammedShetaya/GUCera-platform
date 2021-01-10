@@ -92,7 +92,7 @@
                                         </div>
                                         <hr />
 
-                                      
+
 
 
                                         <div class="row">
@@ -103,7 +103,7 @@
                                                 <asp:Panel ID="instuctorsNames" runat="server"></asp:Panel>
                                             </div>
                                         </div>
-                                        <hr />
+                                        
 
 
 
@@ -111,7 +111,9 @@
                                             <div class="col-sm"></div>
                                             <div class="col-sm"></div>
                                             <div class="col-sm">
-                                                <asp:Button ID="enroll" runat="server" class="btn btn-lg btn-outline-success " Text="Enroll" Style="margin-left: 30px" OnClick="enroll_Click"></asp:Button>
+                                                <asp:Panel ID="enrollPanel" runat="server">
+                                                    <asp:Button ID="enroll" runat="server" class="btn btn-lg btn-outline-success " Text="Enroll" Style="margin-left: 30px" OnClick="enroll_Click"></asp:Button>
+                                                </asp:Panel>
                                             </div>
                                         </div>
 

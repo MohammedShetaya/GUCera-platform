@@ -32,6 +32,22 @@
                </li>
 
                <li class="nav-item">
+                 <asp:Panel runat="server" ID="nonAccepted" OnLoad="NonAcceptedCourses_load">
+                  <a class="nav-link " href="..\admin\ListNonAcceptedCourses.aspx">
+                          Non Accepted Courses
+                  </a>
+                   </asp:Panel>
+               </li>
+
+               <li class="nav-item">
+                 <asp:Panel runat="server" ID="all" OnLoad="AllCourses_load">
+                  <a class="nav-link " href="..\admin\ListAllCourses.aspx">
+                          All courses
+                  </a>
+                   </asp:Panel>
+               </li>
+
+               <li class="nav-item">
                  <asp:Panel runat="server" ID="available" OnLoad="AvailableCourses_load">
                   <a class="nav-link " href="..\Course\availableCourses.aspx">
                           Available Courses

@@ -3,5 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">WELCOME TO GUCera</h1>
+
+            <p class="lead">Online teaching platform</p>
+        </div>
+    </div>
+
+    
 </asp:Content>

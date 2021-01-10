@@ -10,6 +10,8 @@ namespace GUCera.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] != null && Session["userType"].Equals(2))
+            {
                 String connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand courses = new SqlCommand("AdminViewAllCourses", conn);
@@ -29,7 +31,15 @@ namespace GUCera.admin
                     if (rdr1.Read())
                     {
 
-                        String courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        String courseDescription;
+                        try
+                        {
+                            courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        }
+                        catch (Exception ex)
+                        {
+                            courseDescription = "";
+                        }
                         Button button = new Button();
                         button.ID = courseName;
                         button.Text = "Show Course";
@@ -43,6 +53,11 @@ namespace GUCera.admin
                     }
                 }
                 available_Courses.Controls.Add(new Literal() { Text = "</div>" });
+            }
+            else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
         }
         protected void ShowCourse_Click(object sender, EventArgs e)
         {

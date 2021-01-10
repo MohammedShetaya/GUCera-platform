@@ -11,9 +11,7 @@ namespace GUCera.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label l = new Label();
-            l.Text = Session["userType"].ToString();
-            Panel1.Controls.Add(l);
+            
         }
     }
 }

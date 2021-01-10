@@ -58,46 +58,19 @@ namespace GUCera
             if (success.Value.ToString().Equals("1"))
             {
 
-                SqlCommand cmd1 = new SqlCommand("viewMyProfile", conn);
-                cmd1.CommandType = CommandType.StoredProcedure;
-
-                cmd1.Parameters.Add("@id", u); 
-
-                conn.Open(); 
-
-                SqlDataReader rdr = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
-
-                if (rdr.Read())
+                SqlConnection conn1 = new SqlConnection(connString);
+                SqlCommand cmd1 = new SqlCommand("select firstName, lastName from Users where id = @id", conn1);
+                cmd1.CommandType = CommandType.Text;
+                cmd1.Parameters.Add(new SqlParameter("id", u));
+                conn1.Open();
+                SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
+                if (rdr1.Read())
                 {
                     Session["userID"] = u;
-                    Session["firstName"] = rdr.GetString(rdr.GetOrdinal("firstName"));
-                    Session["lastName"] = rdr.GetString(rdr.GetOrdinal("lastName"));
-                    Session["userType"] = 0;
+                    Session["firstName"] = rdr1.GetString(rdr1.GetOrdinal("firstName"));
+                    Session["lastName"] = rdr1.GetString(rdr1.GetOrdinal("lastName"));
+                    Session["userType"] = Int32.Parse(type.Value.ToString());
                 }
-                else {
-                    rdr.Close();
-                    conn.Close();
-                    
-                    SqlCommand cmd2 = new SqlCommand("viewInstructorProfile", conn);
-                    cmd2.CommandType = CommandType.StoredProcedure;
-
-                    cmd2.Parameters.Add("@instrId", u);
-
-                    conn.Open();
-
-                    SqlDataReader rdr1 = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
-
-                    if (rdr1.Read())
-                    {
-                       
-                        Session["userID"] = u;
-                        Session["firstName"] = rdr1.GetString(rdr1.GetOrdinal("firstName"));
-                        Session["lastName"] = rdr1.GetString(rdr1.GetOrdinal("lastName"));
-                        Session["userType"] = 1;
-                       
-                    }
-                }
-
 
                 Response.Redirect("~/Default.aspx");
 

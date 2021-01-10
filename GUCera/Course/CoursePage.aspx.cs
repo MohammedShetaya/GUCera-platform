@@ -79,7 +79,10 @@ namespace GUCera.Course
                     conn1.Close();
 
                 }
-
+                if (!Session["userType"].Equals(0))
+                {
+                    enrollPanel.Controls.Clear();
+                }
             }
             else
             {

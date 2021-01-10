@@ -29,11 +29,17 @@ namespace GUCera.student
                     cmd.Parameters.Add("@id", Session["userID"]);
 
                 }
-                else
+                else if (Session["userType"].Equals(1))
                 {
                     cmd = new SqlCommand("ViewInstructorProfile", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@instrId", Session["userID"]);
+                }
+                else
+                {
+                    cmd = new SqlCommand("select * from Users where id = @adminId", conn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add(new SqlParameter("adminId", Session["userID"]));
                 }
 
                 conn.Open();
@@ -58,7 +64,7 @@ namespace GUCera.student
                     ps = rdr.GetString(rdr.GetOrdinal("password"));
                     if (Session["userType"].Equals(0))
                         gp = rdr.GetDecimal(rdr.GetOrdinal("gpa")) + "";
-                    else
+                    else if (Session["userType"].Equals(1))
                         ra = rdr.GetDecimal(rdr.GetOrdinal("rating")) +"" ;
 
                     bool d = (bool)rdr.GetBoolean(rdr.GetOrdinal("gender")); 
@@ -93,10 +99,15 @@ namespace GUCera.student
                     instructorOrStudent.Text = "GPA :";
                     userTy.Text = "Student"; 
                 }
-                else {
+                else if (Session["userType"].Equals(1))
+                {
                     instructorOrStudent.Text = "Rating :";
                     l4.Text = ra;
                     userTy.Text = "Instructor";
+                }
+                else
+                {
+                    userTy.Text = "Admin";
                 }
                 l5.Text = em;
                 l6.Text = ad;
@@ -138,21 +149,22 @@ namespace GUCera.student
                 rdr.Close();
                 conn.Close();
 
-                SqlCommand cmd2 = new SqlCommand("select * from Student where id = @id", conn);
-                cmd2.CommandType = CommandType.Text;
-                cmd2.Parameters.Add(new SqlParameter("id", Session["userID"]));
-                
-                conn.Open();
-                rdr = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
 
-                if(!rdr.HasRows)
+                if(Session["userType"].Equals(1))
                 {
                     addCard.CssClass = "invisible" ;
                     certifiedCourses.CssClass = "invisible";
                 }
+                else if (Session["userType"].Equals(0))
+                {
+                        addCourse.CssClass = "invisible";
+                }
                 else
                 {
+                    addCard.CssClass = "invisible";
+                    certifiedCourses.CssClass = "invisible";
                     addCourse.CssClass = "invisible";
+                    isAdmin.Controls.Clear();
                 }
 
 

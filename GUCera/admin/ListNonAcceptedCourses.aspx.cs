@@ -15,6 +15,8 @@ namespace GUCera.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] != null && Session["userType"].Equals(2))
+            {
                 String connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand courses = new SqlCommand("AdminViewNonAcceptedCourses", conn);
@@ -33,14 +35,21 @@ namespace GUCera.admin
                     SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
                     if (rdr1.Read())
                     {
-
-                        String courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        String courseDescription;
+                        try
+                        {
+                            courseDescription = rdr1.GetString(rdr1.GetOrdinal("courseDescription"));
+                        }
+                        catch (Exception ex)
+                        {
+                            courseDescription = "";
+                        }
                         Button button = new Button();
                         button.ID = courseName;
                         button.Text = "Show Course";
                         button.CssClass = "btn btn-outline-light btn-sm";
                         Button button2 = new Button();
-                        button2.ID = courseID+"";
+                        button2.ID = courseID + "";
                         button2.Text = "Accept Course";
                         button2.CssClass = "btn btn-outline-light btn-sm";
                         button.Click += new EventHandler(ShowCourse_Click);
@@ -53,6 +62,11 @@ namespace GUCera.admin
                     }
                 }
                 available_Courses.Controls.Add(new Literal() { Text = "</div>" });
+            }
+            else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
         }
         protected void AcceptCourse_Click(object sender,EventArgs e)
         {

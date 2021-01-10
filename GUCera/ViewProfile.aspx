@@ -85,7 +85,7 @@
                                             </div>
                                         </div>
                                         <hr />
-
+                                        <asp:Panel ID="isAdmin" runat="server">
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight: bold;">
@@ -99,7 +99,7 @@
                                             </div>
                                         </div>
                                         <hr />
-
+                                        </asp:Panel>
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">

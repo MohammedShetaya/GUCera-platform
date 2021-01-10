@@ -13,11 +13,11 @@ namespace GUCera
         {
             if (Session["userID"] != null)
             {
-                if (Session["userType"].ToString().Equals("0"))
+                if (Session["userType"].Equals(0))
                 {
                     Response.Redirect("~/student/StudentDefault.aspx");
                 }
-                else if (Session["userType"].ToString().Equals("1"))
+                else if (Session["userType"].Equals(1))
                 {
                     Response.Redirect("~/instructor/InstructorDefault.aspx");
                 }
