@@ -24,7 +24,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="name">Course Name</label>
-                                <asp:TextBox  class="form-control" id="name" TextMode="SingleLine" runat="server" placeholder="Enter your course name" ></asp:TextBox>
+                                <asp:TextBox  class="form-control" id="name" TextMode="SingleLine" runat="server" placeholder="Enter your course name" required="true"></asp:TextBox>
                             </div>
                         </div>
                     </div>
