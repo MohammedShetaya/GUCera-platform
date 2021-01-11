@@ -192,6 +192,7 @@
     <Compile Include="instructor\ShowAssignemnts.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ShowAssignemnts.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="instructor\ShowAssignemnts.aspx.designer.cs">
       <DependentUpon>ShowAssignemnts.aspx</DependentUpon>
