@@ -46,6 +46,7 @@
                     </asp:Panel>
                 </li>
 
+
                 <li class="nav-item">
                     <asp:Panel runat="server" ID="nonAccepted">
                         <a class="nav-link " href="..\admin\ListNonAcceptedCourses.aspx">
@@ -58,6 +59,20 @@
                     <asp:Panel runat="server" ID="all">
                         <a class="nav-link " href="..\admin\ListAllCourses.aspx">
                             All courses
+                        </a>
+                    </asp:Panel>
+                </li>
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="CreatePromo">
+                        <a class="nav-link " href="..\admin\CreateNewPromoCode.aspx">
+                            Create Promocode
+                        </a>
+                    </asp:Panel>
+                </li>
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="IssuePromo">
+                        <a class="nav-link " href="..\admin\IssuePromoCodeToStudent.aspx">
+                            Issue Promocode to Students
                         </a>
                     </asp:Panel>
                 </li>

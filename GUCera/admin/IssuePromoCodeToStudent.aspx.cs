@@ -13,8 +13,7 @@ namespace GUCera.admin
         {
             if (Session["userID"] != null && Session["userType"].Equals(2))
             {
-                promo.Items.Clear();
-                student.Items.Clear();
+                
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd =
