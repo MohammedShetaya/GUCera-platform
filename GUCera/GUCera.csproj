@@ -70,6 +70,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\CreateNewPromoCode.aspx" />
+    <Content Include="admin\IssuePromoCodeToStudent.aspx" />
     <Content Include="admin\ListNonAcceptedCourses.aspx" />
     <Content Include="assignment\StudentViewAssign.aspx" />
     <Content Include="assignment\SubmittedAssignments.aspx" />
@@ -110,6 +112,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\CreateNewPromoCode.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CreateNewPromoCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CreateNewPromoCode.aspx.designer.cs">
+      <DependentUpon>CreateNewPromoCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\IssuePromoCodeToStudent.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>IssuePromoCodeToStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\IssuePromoCodeToStudent.aspx.designer.cs">
+      <DependentUpon>IssuePromoCodeToStudent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\ListNonAcceptedCourses.aspx.cs">
       <DependentUpon>ListNonAcceptedCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

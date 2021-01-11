@@ -83,7 +83,6 @@ namespace GUCera.instructor
                 Label l = new Label();
                 l.Text = "Incorrect Assignment Information or Assignment already exists";
                 incorrectInput.Controls.Add(l);
-                
             }
             
         }
