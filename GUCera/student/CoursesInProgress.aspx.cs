@@ -25,8 +25,9 @@ namespace GUCera.student
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
 
-                SqlCommand cmd = new SqlCommand("select * from Course inner join StudentTakeCourse on Course.id = StudentTakeCourse.cid", conn);
+                SqlCommand cmd = new SqlCommand("select * from Course inner join StudentTakeCourse on Course.id = StudentTakeCourse.cid where StudentTakeCourse.sid = @stu", conn);
                 cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("stu" , Session["userID"] ));
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -36,7 +37,16 @@ namespace GUCera.student
                 {
                     int courseID = rdr.GetInt32(rdr.GetOrdinal("id"));
                     string courseName = rdr.GetString(rdr.GetOrdinal("name"));
-                    string courseDis = rdr.GetString(rdr.GetOrdinal("courseDescription"));
+
+                    string courseDis = "";
+                    try
+                    {
+                        courseDis = rdr.GetString(rdr.GetOrdinal("courseDescription"));
+                    }
+                    catch (Exception ex) { 
+                        
+                       
+                    }
 
                     progressCourses.Controls.Add(new Literal() { Text = "<div class=\"col-4\"> <div class=\"card mb-4 text-white bg-secondary\"><img class=\"card-img-top\" src=\"..\\images\\courses.jpg\" alt=\"Course\"/> <div class=\"card-body\"> <h5 class=\"cardTitle\">" + courseName + "</h5><p class=\"card-text\" style = \"height:100px;\">" + courseDis + "</p>" });
 

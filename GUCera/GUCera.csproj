@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\ListNonAcceptedCourses.aspx" />
+    <Content Include="assignment\StudentViewAssign.aspx" />
+    <Content Include="assignment\SubmittedAssignments.aspx" />
     <Content Include="Course\certifiedCourses.aspx" />
     <Content Include="Course\CourseCertificate.aspx" />
     <Content Include="Course\InProgressCoursePage.aspx" />
@@ -110,6 +112,20 @@
     </Compile>
     <Compile Include="admin\ListNonAcceptedCourses.aspx.designer.cs">
       <DependentUpon>ListNonAcceptedCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assignment\StudentViewAssign.aspx.cs">
+      <DependentUpon>StudentViewAssign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assignment\StudentViewAssign.aspx.designer.cs">
+      <DependentUpon>StudentViewAssign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assignment\SubmittedAssignments.aspx.cs">
+      <DependentUpon>SubmittedAssignments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assignment\SubmittedAssignments.aspx.designer.cs">
+      <DependentUpon>SubmittedAssignments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Course\certifiedCourses.aspx.cs">
       <DependentUpon>certifiedCourses.aspx</DependentUpon>

@@ -12,11 +12,18 @@
 
             <div class="col-8">
                 <div class="card">
-                    <asp:Panel ID="courseName" class="card-header" runat="server">
+
+                    <div class="card-header row">
+
+                    <asp:Panel ID="courseName" class="col-6"  runat="server">
                         
                     </asp:Panel>
-                    
+                        
+                        <div class="ml-auto">
+                            <a type="button" href="../assignment/SubmittedAssignments.aspx" style="margin-right:20px;" class="btn btn-info">Submitted Assignments</a>
+                        </div>
 
+                        </div>
 
 
 
@@ -90,26 +97,28 @@
 </div>
 
     <div class="container">
-
-         <div class="form-group">
+         
+         <div class="form-group" style="margin-bottom:30px;">
+             <div class="row">
              <div class ="col-6">
                 <label style ="font:bold">Add Feedback to this course</label>
-                <asp:TextBox class="form-control" TextMode="MultiLine" id="addFeedback" runat="server" rows="3"></asp:TextBox>
+                <asp:TextBox class="form-control" TextMode="MultiLine" id="feedbackText" runat="server" rows="3"></asp:TextBox>
              </div>
+
+             <div class="col-2" style="margin-top:40px;">
+				 <asp:Button ID="feedbackButton" runat="server" OnClick="addFeedback_Click" class="btn btn-outline-info" Text="Add Feedback" />
+             </div>
+            </div>
         </div>
 
-        <div class="row">
+        <asp:Panel runat="server" ID="feedbackContent" >
 
-            <div class="col-sm-4 col-md-2 col-5">
-                <img class="rounded" style="height:45PX;width:45px;" alt="" src="https://ptetutorials.com/images/user-profile.png" />
-                <h6> user name </h6>
-            </div>
-            <div class="col-md-7 col-6">
-                
-                <p>nekanfkaenfanfkjawjbJKAS N KNDJABFJ NJKNJA BJFB WBDJBAJB HJ BJDBAWBFHJEAFH</p>
-            </div>
+             
 
-        </div>
+            
+
+
+        </asp:Panel>
 
     </div>
 

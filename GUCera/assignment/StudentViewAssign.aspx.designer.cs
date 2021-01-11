@@ -7,83 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera.Course
+namespace GUCera.assignment
 {
 
 
-	public partial class InProgressCoursePage
+	public partial class StudentViewAssign
 	{
 
 		/// <summary>
-		/// courseName control.
+		/// assignTitle control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel courseName;
+		protected global::System.Web.UI.WebControls.Panel assignTitle;
 
 		/// <summary>
-		/// creditHours control.
+		/// assignGrade control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel creditHours;
+		protected global::System.Web.UI.WebControls.Label assignGrade;
 
 		/// <summary>
-		/// courseDisc control.
+		/// deadline control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel courseDisc;
+		protected global::System.Web.UI.WebControls.Panel deadline;
 
 		/// <summary>
-		/// courseContent control.
+		/// weight control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel courseContent;
+		protected global::System.Web.UI.WebControls.Panel weight;
 
 		/// <summary>
-		/// courseAssignments control.
+		/// fullGrade control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel courseAssignments;
+		protected global::System.Web.UI.WebControls.Panel fullGrade;
 
 		/// <summary>
-		/// feedbackText control.
+		/// content control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox feedbackText;
-
-		/// <summary>
-		/// feedbackButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button feedbackButton;
-
-		/// <summary>
-		/// feedbackContent control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel feedbackContent;
+		protected global::System.Web.UI.WebControls.Panel content;
 	}
 }
