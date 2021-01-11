@@ -35,8 +35,12 @@
                                     <div class="form-group">
                                         <label for="asType">Assignment Type</label>
                                         <div class="input-group">
-                                            <asp:TextBox ID="asType" class="form-control" TextMode="SingleLine" runat="server" placeholder="Please enter assignment type" required="true"></asp:TextBox>
+                                            <asp:DropDownList runat="server" class="form-control" ID="asType">
+                                                <asp:ListItem>quiz</asp:ListItem>
+                                                <asp:ListItem>project</asp:ListItem>
+                                                <asp:ListItem>exam</asp:ListItem>
 
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>

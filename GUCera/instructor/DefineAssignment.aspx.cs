@@ -16,6 +16,7 @@ namespace GUCera.instructor
         {
             if (Session["userID"] != null && Session["userType"].Equals(1))
             {
+                cName.Items.Clear();
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd = new SqlCommand("select id, name from Course where instructorId = @instId", conn);
@@ -49,11 +50,12 @@ namespace GUCera.instructor
             try
             {
                 int num = Int32.Parse(asNum.Text);
-                String typ = asType.Text;
+                String typ = asType.SelectedItem.Text;
                 int cid = Int32.Parse(cName.SelectedItem.Value);
                 int fullGrd = Int32.Parse(asGrade.Text);
                 Decimal weig = Decimal.Parse(asWeight.Text);
                 DateTime deadlineDate = DateTime.Parse(dead.Text);
+                String Cont = asContent.Text;
 
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
@@ -61,14 +63,14 @@ namespace GUCera.instructor
                 SqlCommand cmd = new SqlCommand("DefineAssignmentOfCourseOfCertianType", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@instrId", Session["userID"]);
-                cmd.Parameters.Add("@cid", Session["userID"]);
-                cmd.Parameters.Add("@number", Session["userID"]);
-                cmd.Parameters.Add("@type", Session["userID"]);
-                cmd.Parameters.Add("@fullGrade", Session["userID"]);
-                cmd.Parameters.Add("@weight", Session["userID"]);
-                cmd.Parameters.Add("@deadline", Session["userID"]);
-                cmd.Parameters.Add("@content", Session["userID"]);
+                cmd.Parameters.Add("@instId", Session["userID"]);
+                cmd.Parameters.Add("@cid", cid);
+                cmd.Parameters.Add("@number", num);
+                cmd.Parameters.Add("@type", typ);
+                cmd.Parameters.Add("@fullGrade", fullGrd);
+                cmd.Parameters.Add("@weight", weig);
+                cmd.Parameters.Add("@deadline", deadlineDate);
+                cmd.Parameters.Add("@content", Cont);
 
 
                 conn.Open();
@@ -81,6 +83,7 @@ namespace GUCera.instructor
                 Label l = new Label();
                 l.Text = "Incorrect Assignment Information or Assignment already exists";
                 incorrectInput.Controls.Add(l);
+                
             }
             
         }

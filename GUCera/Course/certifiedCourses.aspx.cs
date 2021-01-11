@@ -14,8 +14,10 @@ namespace GUCera.Course
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userID"] != null)
+            if (Session["userID"] != null && Session["userType"].Equals(0))
             {
+
+                certifiedCoursesPanel.Items.Clear();
 
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
@@ -39,7 +41,7 @@ namespace GUCera.Course
             }
             else
             {
-                Response.Redirect("~/SignIn.aspx");
+                Response.Redirect("~/Default.aspx");
             }
 
         }
