@@ -33,6 +33,14 @@
                </li>
 
                <li class="nav-item">
+                 <asp:Panel runat="server" ID="DefineAssignment">
+                  <a class="nav-link " href="..\instructor\DefineAssignment.aspx">
+                          Define Assignment
+                  </a>
+                   </asp:Panel>
+               </li>
+
+               <li class="nav-item">
                  <asp:Panel runat="server" ID="nonAccepted" OnLoad="NonAcceptedCourses_load">
                   <a class="nav-link " href="..\admin\ListNonAcceptedCourses.aspx">
                           Non Accepted Courses

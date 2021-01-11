@@ -26,7 +26,9 @@ namespace GUCera.instructor
 
         protected void addCard_Click(object sender, EventArgs e)
         {
-            string nam = name.Text;
+            try
+            {
+                string nam = name.Text;
             string cred = Credit.Text;
             string price = Price.Text;
             
@@ -44,8 +46,7 @@ namespace GUCera.instructor
             cmd.Parameters.Add("@price", price);
             cmd.Parameters.Add("@instructorId", Session["userID"]);
 
-            try
-            {
+            
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -58,7 +59,7 @@ namespace GUCera.instructor
             {
                 
                     Label l = new Label();
-                    l.Text = "Incorrect Course Information or Course name already exists";
+                    l.Text = "Incorrect Course Information or Course already exists";
                     incorrectInput.Controls.Add(l);
                 
             }

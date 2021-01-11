@@ -77,6 +77,7 @@
     <Content Include="Course\CourseCertificate.aspx" />
     <Content Include="Course\InProgressCoursePage.aspx" />
     <Content Include="images\certificate.jpg" />
+    <Content Include="instructor\DefineAssignment.aspx" />
     <Content Include="instructor\InstructorAddCourse.aspx" />
     <Content Include="student\AddCreditCard.aspx" />
     <Content Include="AddTelephoneNumber.aspx" />
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Course\InProgressCoursePage.aspx.designer.cs">
       <DependentUpon>InProgressCoursePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\DefineAssignment.aspx.cs">
+      <DependentUpon>DefineAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructor\DefineAssignment.aspx.designer.cs">
+      <DependentUpon>DefineAssignment.aspx</DependentUpon>
     </Compile>
     <Compile Include="instructor\InstructorAddCourse.aspx.cs">
       <DependentUpon>InstructorAddCourse.aspx</DependentUpon>

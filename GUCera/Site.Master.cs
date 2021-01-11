@@ -24,6 +24,7 @@ namespace GUCera
                 {
                     nonAccepted.Controls.Clear();
                     all.Controls.Clear();
+                    DefineAssignment.Controls.Clear();
 
                 }
                 else if (Session["usertype"].Equals(1))
@@ -37,6 +38,7 @@ namespace GUCera
                 {
                     progress.Controls.Clear();
                     available.Controls.Clear();
+                    DefineAssignment.Controls.Clear();
                 }
 
             }
@@ -46,6 +48,7 @@ namespace GUCera
                 nonAccepted.Controls.Clear();
                 all.Controls.Clear();
                 available.Controls.Clear();
+                DefineAssignment.Controls.Clear();
                 logoutPanel.CssClass = "invisible";
             }
         }

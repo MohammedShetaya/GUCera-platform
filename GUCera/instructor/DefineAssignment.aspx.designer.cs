@@ -7,128 +7,92 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera
+namespace GUCera.instructor
 {
 
 
-    public partial class Site
+    public partial class DefineAssignment
     {
 
         /// <summary>
-        /// head control.
+        /// asNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox asNum;
 
         /// <summary>
-        /// form1 control.
+        /// asType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DropDownList asType;
 
         /// <summary>
-        /// profile control.
+        /// asContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel profile;
+        protected global::System.Web.UI.WebControls.TextBox asContent;
 
         /// <summary>
-        /// DefineAssignment control.
+        /// cName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel DefineAssignment;
+        protected global::System.Web.UI.WebControls.DropDownList cName;
 
         /// <summary>
-        /// nonAccepted control.
+        /// asGrade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel nonAccepted;
+        protected global::System.Web.UI.WebControls.TextBox asGrade;
 
         /// <summary>
-        /// all control.
+        /// asWeight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel all;
+        protected global::System.Web.UI.WebControls.TextBox asWeight;
 
         /// <summary>
-        /// available control.
+        /// dead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel available;
+        protected global::System.Web.UI.WebControls.TextBox dead;
 
         /// <summary>
-        /// progress control.
+        /// incorrectInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel progress;
+        protected global::System.Web.UI.WebControls.Panel incorrectInput;
 
         /// <summary>
-        /// signIn control.
+        /// addCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel signIn;
-
-        /// <summary>
-        /// signUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel signUp;
-
-        /// <summary>
-        /// logoutPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel logoutPanel;
-
-        /// <summary>
-        /// logout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button addCard;
     }
 }
