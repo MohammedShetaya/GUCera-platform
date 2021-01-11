@@ -15,14 +15,15 @@ namespace GUCera.Course
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userID"] != null)
+            if (Session["userID"] != null && Session["userType"].Equals(0))
             {
-
+                
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
 
                 SqlCommand cmd = new SqlCommand("availableCourses", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@sid", Session["userId"]);
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -70,7 +71,7 @@ namespace GUCera.Course
             }
             else
             {
-                Response.Redirect("~/SignIn.aspx");
+                Response.Redirect("~/Default.aspx");
             }
         }
 
@@ -104,7 +105,7 @@ namespace GUCera.Course
             SqlDataReader rdr1 = cmd1.ExecuteReader(CommandBehavior.CloseConnection);
 
             Response.Redirect("~/Course/CoursePage.aspx?courseName=" + courseName +"&courseID="+ courseID);
-
+            
 
 
         }

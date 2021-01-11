@@ -25,6 +25,7 @@ namespace GUCera
                     nonAccepted.Controls.Clear();
                     all.Controls.Clear();
                     DefineAssignment.Controls.Clear();
+                    ShowSubmittedAssignments.Controls.Clear();
 
                 }
                 else if (Session["usertype"].Equals(1))
@@ -39,6 +40,7 @@ namespace GUCera
                     progress.Controls.Clear();
                     available.Controls.Clear();
                     DefineAssignment.Controls.Clear();
+                    ShowSubmittedAssignments.Controls.Clear();
                 }
 
             }
@@ -49,6 +51,7 @@ namespace GUCera
                 all.Controls.Clear();
                 available.Controls.Clear();
                 DefineAssignment.Controls.Clear();
+                ShowSubmittedAssignments.Controls.Clear();
                 logoutPanel.CssClass = "invisible";
             }
         }
@@ -74,29 +77,12 @@ namespace GUCera
                 signIn.CssClass = "invisible";
 
         }
+        
 
-        protected void CoursesInProgress_load(object sender, EventArgs e)
-        {
-            
-        }
+        
 
-        protected void AvailableCourses_load(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        protected void NonAcceptedCourses_load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        protected void AllCourses_load(object sender, EventArgs e)
-        {
-
-
-        }
+       
+        
 
     }
 }

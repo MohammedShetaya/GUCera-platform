@@ -6,102 +6,108 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles\style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles\style.css"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style = " padding-top:10px; padding-bottom:10px;">
-            <a class="navbar-brand" href="..\Default.aspx">GUCera</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
+<form id="form1" runat="server">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style=" padding-top:10px; padding-bottom:10px;">
+        <a class="navbar-brand" href="..\Default.aspx">GUCera</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav">
+            <ul class="navbar-nav">
 
 
-               <li class="nav-item active">
-                  <a class="nav-link" href="..\Default.aspx">Home <span class="sr-only">(current)</span></a>
-               </li>
-
-               <li class="nav-item">
-                  <a class="nav-link " href="..\ViewProfile.aspx">
-                          <asp:Panel ID="profile" runat="server"></asp:Panel>
-                  </a>
-               </li>
-
-               <li class="nav-item">
-                 <asp:Panel runat="server" ID="DefineAssignment">
-                  <a class="nav-link " href="..\instructor\DefineAssignment.aspx">
-                          Define Assignment
-                  </a>
-                   </asp:Panel>
-               </li>
-
-               <li class="nav-item">
-                 <asp:Panel runat="server" ID="nonAccepted" OnLoad="NonAcceptedCourses_load">
-                  <a class="nav-link " href="..\admin\ListNonAcceptedCourses.aspx">
-                          Non Accepted Courses
-                  </a>
-                   </asp:Panel>
-               </li>
-
-               <li class="nav-item">
-                 <asp:Panel runat="server" ID="all" OnLoad="AllCourses_load">
-                  <a class="nav-link " href="..\admin\ListAllCourses.aspx">
-                          All courses
-                  </a>
-                   </asp:Panel>
-               </li>
-
-               <li class="nav-item">
-                 <asp:Panel runat="server" ID="available" OnLoad="AvailableCourses_load">
-                  <a class="nav-link " href="..\Course\availableCourses.aspx">
-                          Available Courses
-                  </a>
-                   </asp:Panel>
-               </li>
-
-               <li class="nav-item">
-                 <asp:Panel runat="server" ID="progress" OnLoad="CoursesInProgress_load">
-                  <a class="nav-link " href="..\student\CoursesInProgress.aspx">
-                          Courses in progress
-                  </a>
-                   </asp:Panel>
-               </li>
-
-               <li class="nav-item">
-                   <asp:Panel runat="server" ID="signIn" OnLoad="signIn_Load">
-                  <a class="nav-link" href="..\SignIn.aspx">Sign in</a>
-                  </asp:Panel>
+                <li class="nav-item active">
+                    <a class="nav-link" href="..\Default.aspx">Home <span class="sr-only">(current)</span></a>
                 </li>
 
-               <li class="nav-item ">
-                   <asp:Panel runat="server" ID="signUp" OnLoad="signUp_Load" >
-                  <a class="nav-link " href="..\SignUp.aspx">Sign up</a>
-                   </asp:Panel>
-               </li>
-                
-           </ul>
+                <li class="nav-item">
+                    <a class="nav-link " href="..\ViewProfile.aspx">
+                        <asp:Panel ID="profile" runat="server"></asp:Panel>
+                    </a>
+                </li>
 
-       </div>
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="DefineAssignment">
+                        <a class="nav-link " href="..\instructor\DefineAssignment.aspx">
+                            Define Assignment
+                        </a>
+                    </asp:Panel>
+                </li>
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="ShowSubmittedAssignments">
+                        <a class="nav-link " href="..\instructor\SubmittedAssignments.aspx">
+                            Submitted Assignments
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="nonAccepted">
+                        <a class="nav-link " href="..\admin\ListNonAcceptedCourses.aspx">
+                            Non Accepted Courses
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="all">
+                        <a class="nav-link " href="..\admin\ListAllCourses.aspx">
+                            All courses
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="available">
+                        <a class="nav-link " href="..\Course\availableCourses.aspx">
+                            Available Courses
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="progress">
+                        <a class="nav-link " href="..\student\CoursesInProgress.aspx">
+                            Courses in progress
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="signIn" OnLoad="signIn_Load">
+                        <a class="nav-link" href="..\SignIn.aspx">Sign in</a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item ">
+                    <asp:Panel runat="server" ID="signUp" OnLoad="signUp_Load">
+                        <a class="nav-link " href="..\SignUp.aspx">Sign up</a>
+                    </asp:Panel>
+                </li>
+
+            </ul>
+
+        </div>
         <asp:Panel ID="logoutPanel" runat="server">
             <a>
-            <asp:Button id="logout"  text="Log out"  OnClick="logout_Click" runat="server" class="btn btn-outline-secondary" style="margin-left: 15px;"></asp:Button>
+                <asp:Button id="logout" text="Log out" OnClick="logout_Click" runat="server" class="btn btn-outline-secondary" style="margin-left: 15px;"></asp:Button>
             </a>
-       </asp:Panel>    
-   </nav>
-        <div>
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:Panel>
+    </nav>
+    <div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
 
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+        </asp:ContentPlaceHolder>
+    </div>
+</form>
 
-   
-    <script src="..\script\script.js"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script></body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
 </html>

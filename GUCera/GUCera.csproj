@@ -78,7 +78,10 @@
     <Content Include="Course\InProgressCoursePage.aspx" />
     <Content Include="images\certificate.jpg" />
     <Content Include="instructor\DefineAssignment.aspx" />
+    <Content Include="instructor\GradeAssignment.aspx" />
     <Content Include="instructor\InstructorAddCourse.aspx" />
+    <Content Include="instructor\ShowAssignemnts.aspx" />
+    <Content Include="instructor\SubmittedAssignments.aspx" />
     <Content Include="student\AddCreditCard.aspx" />
     <Content Include="AddTelephoneNumber.aspx" />
     <Content Include="admin\AdminDefault.aspx" />
@@ -156,12 +159,33 @@
     <Compile Include="instructor\DefineAssignment.aspx.designer.cs">
       <DependentUpon>DefineAssignment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="instructor\GradeAssignment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GradeAssignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\GradeAssignment.aspx.designer.cs">
+      <DependentUpon>GradeAssignment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="instructor\InstructorAddCourse.aspx.cs">
       <DependentUpon>InstructorAddCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="instructor\InstructorAddCourse.aspx.designer.cs">
       <DependentUpon>InstructorAddCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\ShowAssignemnts.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ShowAssignemnts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\ShowAssignemnts.aspx.designer.cs">
+      <DependentUpon>ShowAssignemnts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\SubmittedAssignments.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SubmittedAssignments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\SubmittedAssignments.aspx.designer.cs">
+      <DependentUpon>SubmittedAssignments.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\AddCreditCard.aspx.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
