@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera.Course
+namespace GUCera.instructor
 {
 
 
-	public partial class InProgressCoursePage
+	public partial class AddedCoursePage
 	{
 
 		/// <summary>
@@ -22,15 +22,6 @@ namespace GUCera.Course
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Panel courseName;
-
-		/// <summary>
-		/// submittedAssigns control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton submittedAssigns;
 
 		/// <summary>
 		/// creditHours control.
@@ -67,24 +58,6 @@ namespace GUCera.Course
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Panel courseAssignments;
-
-		/// <summary>
-		/// feedbackText control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox feedbackText;
-
-		/// <summary>
-		/// feedbackButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button feedbackButton;
 
 		/// <summary>
 		/// feedbackContent control.

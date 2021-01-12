@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InProgressCoursePage.aspx.cs" Inherits="GUCera.Course.InProgressCoursePage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddedCoursePage.aspx.cs" Inherits="GUCera.instructor.AddedCoursePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
+
+	 <div class="jumbotron">
         
      <div class="container">
             
@@ -19,10 +20,7 @@
                         
                     </asp:Panel>
                         
-                        <div class="ml-auto">
-                            <asp:LinkButton type="button" ID="submittedAssigns" OnClick="submittedAssigns_Click" runat="server" style="margin-right:20px;" class="btn btn-info">Submitted Assignments</asp:LinkButton>
-                        </div>
-
+                       
                         </div>
 
 
@@ -98,19 +96,7 @@
 
     <div class="container">
          
-         <div class="form-group" style="margin-bottom:30px;">
-             <div class="row">
-             <div class ="col-6">
-                <label style ="font:bold">Add Feedback to this course</label>
-                <asp:TextBox class="form-control" TextMode="MultiLine" id="feedbackText" runat="server" rows="3"></asp:TextBox>
-             </div>
-
-             <div class="col-2" style="margin-top:40px;">
-				 <asp:Button ID="feedbackButton" runat="server" OnClick="addFeedback_Click" class="btn btn-outline-info" Text="Add Feedback" />
-             </div>
-            </div>
-        </div>
-
+        
         <asp:Panel runat="server" ID="feedbackContent" >
 
              
@@ -121,5 +107,6 @@
         </asp:Panel>
 
     </div>
+
 
 </asp:Content>

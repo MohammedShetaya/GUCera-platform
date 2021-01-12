@@ -22,12 +22,14 @@ namespace GUCera.assignment
 			}
 			else {
 
+				int cc = int.Parse(Request.QueryString["courseID"]);
 
 				string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
 				SqlConnection conn = new SqlConnection(connString);
 
-				SqlCommand cmd = new SqlCommand("select * from StudentTakeAssignment", conn);
+				SqlCommand cmd = new SqlCommand("select * from StudentTakeAssignment where cid = @cc", conn);
 				cmd.CommandType = CommandType.Text ;
+				cmd.Parameters.Add(new SqlParameter("cc" , cc )); 
 
 				conn.Open();
 

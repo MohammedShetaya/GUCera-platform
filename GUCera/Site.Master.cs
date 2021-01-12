@@ -28,7 +28,8 @@ namespace GUCera
                     ShowSubmittedAssignments.Controls.Clear();
                     IssuePromo.Controls.Clear();
                     CreatePromo.Controls.Clear();
-
+                    addedCourse.Controls.Clear();
+                    issueCertificate.Controls.Clear();
                 }
                 else if (Session["usertype"].Equals(1))
                 {
@@ -45,7 +46,8 @@ namespace GUCera
                     available.Controls.Clear();
                     DefineAssignment.Controls.Clear();
                     ShowSubmittedAssignments.Controls.Clear();
-                    
+                    addedCourse.Controls.Clear();
+                    issueCertificate.Controls.Clear();
                 }
 
             }
@@ -59,6 +61,8 @@ namespace GUCera
                 ShowSubmittedAssignments.Controls.Clear();
                 IssuePromo.Controls.Clear();
                 CreatePromo.Controls.Clear();
+                addedCourse.Controls.Clear();
+                issueCertificate.Controls.Clear();
                 logoutPanel.CssClass = "invisible";
             }
         }

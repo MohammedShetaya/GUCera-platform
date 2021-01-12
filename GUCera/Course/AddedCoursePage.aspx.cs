@@ -8,12 +8,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 
-namespace GUCera.Course
+
+namespace GUCera.instructor
 {
-    public partial class InProgressCoursePage : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class AddedCoursePage : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
             if (Session["userID"] == null)
             {
@@ -33,7 +34,7 @@ namespace GUCera.Course
 
                 int ID = int.Parse(Request.QueryString["courseID"]);
 
-    
+
                 cmd.Parameters.Add("@id", ID);
 
                 conn.Open();
@@ -72,10 +73,11 @@ namespace GUCera.Course
                 conn.Close();
 
 
-                SqlCommand cmd1 = new SqlCommand("viewAssign", conn);
-                cmd1.CommandType = CommandType.StoredProcedure;
-                cmd1.Parameters.Add(new SqlParameter("@courseId", ID));
-                cmd1.Parameters.Add(new SqlParameter("@Sid", Session["userID"]));
+                SqlCommand cmd1 = new SqlCommand("select * from Course inner join Assignment on Course.id = Assignment.cid where Course.instructorId = @ins  and Course.id = @cc", conn);
+                cmd1.CommandType = CommandType.Text;
+                cmd1.Parameters.Add(new SqlParameter("@cc", ID));
+                cmd1.Parameters.Add(new SqlParameter("@ins", Session["userID"]));
+
 
                 conn.Open();
 
@@ -92,13 +94,7 @@ namespace GUCera.Course
 
                         courseAssignments.Controls.Add(new Literal() { Text = "<div class=\"card\"><div class=\"card-body\"><h5 class=\"card-title\">" + assignType + " " + assignNum + "</h5><p class=\"card-text\">" + assignCont + "</p>" });
 
-                        Button b1 = new Button();
-                        b1.Text = "submit assign";
-                        b1.ID = assignType + "-" + assignNum;
-                        b1.CssClass = "btn btn-outline-info";
-                        b1.Click += new EventHandler(submitAssignment_Click);
-
-                        courseAssignments.Controls.Add(b1);
+                   
                         courseAssignments.Controls.Add(new Literal() { Text = "</div></div>" });
                     }
                     catch (Exception ex)
@@ -167,134 +163,13 @@ namespace GUCera.Course
 
 
                     feedbackContent.Controls.Add(new Literal() { Text = "<div class=\"row\" style=\"margin-bottom:25px;\"> <div class=\"col-sm-4 col-md-2 col-5\">  <img class=\"rounded\" style=\"height:45PX; width: 45px;\" alt=\"\" src=\"..\\images\\user-profile.png\"/> <h6> " + adderfName + " " + adderlName + "</h6></div> <div class=\"col-md-7 col-6\"> <div class=\"row\"><p>" + comment + "</p></div><div class=\"row\">" });
-                  
-                    LinkButton bb = new LinkButton();
-                    bb.CssClass = "fa fa-thumbs-up";
-                    bb.Click += new EventHandler(addLike_Click);
-                    bb.ID = ID + "-" + feedNumber;
-                    feedbackContent.Controls.Add(bb);
 
                     feedbackContent.Controls.Add(new Literal() { Text = "<span style = \"margin-left:20px;\">" + likes + "</span></div></div></div>" });
 
                 }
             }
 
-        }
-
-        protected void submitAssignment_Click(object sender, EventArgs e)
-        {
-
-            Button s = (Button)sender;
-            string[] assign = (s.ID).Split('-');
-            string assignType = assign[0];
-            int assignNum = int.Parse(assign[1]);
-
-            string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
-            SqlConnection conn = new SqlConnection(connString);
-
-            SqlCommand cmd = new SqlCommand("submitAssign", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            int cid = int.Parse(Request.QueryString["courseID"]);
-
-
-            cmd.Parameters.Add("@assignType", assignType);
-            cmd.Parameters.Add("@assignnumber", assignNum);
-            cmd.Parameters.Add("@sid", Session["userID"]);
-            cmd.Parameters.Add("@cid", cid);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            Response.Redirect("~/Course/InProgressCoursePage.aspx?courseID=" + cid);
-
 
         }
-
-
-        protected void addLike_Click(object sender, EventArgs e)
-        {
-
-            LinkButton s = (LinkButton)sender;
-
-            string senderID = s.ID;
-            string[] likeData = senderID.Split('-');
-            int cid = int.Parse(likeData[0]);
-            int feedNumber = int.Parse(likeData[1]);
-
-            string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
-            SqlConnection conn = new SqlConnection(connString);
-
-            SqlCommand cmd = new SqlCommand("select * from Feedback where cid = @cc and number = @nu", conn);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add(new SqlParameter("cc", cid));
-            cmd.Parameters.Add(new SqlParameter("nu", feedNumber));
-
-            conn.Open();
-
-            SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-
-            if (rdr.Read())
-            {
-                int numberOfLikes = rdr.GetInt32(rdr.GetOrdinal("numberOfLikes"));
-                numberOfLikes = numberOfLikes + 1;
-
-                rdr.Close();
-                conn.Close();
-
-                conn.Open();
-
-                SqlCommand cc = new SqlCommand("update Feedback set numberOfLikes = @num where cid = @ci  and number = @nu", conn);
-                cc.Parameters.Add(new SqlParameter("num", numberOfLikes));
-                cc.Parameters.Add(new SqlParameter("ci", cid));
-                cc.Parameters.Add(new SqlParameter("nu", feedNumber));
-
-                cc.ExecuteNonQuery();
-                conn.Close();
-
-
-            }
-
-            Response.Redirect("~/Course/InProgressCoursePage.aspx?courseID=" + cid);
-
-
-        }
-
-
-        protected void addFeedback_Click(object sender, EventArgs e)
-        {
-            string feedback = feedbackText.Text;
-            int cid = int.Parse(Request.QueryString["courseID"]);
-
-            string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
-            SqlConnection conn = new SqlConnection(connString);
-
-            SqlCommand cmd = new SqlCommand("addFeedback", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("@comment", feedback);
-            cmd.Parameters.Add("@cid", cid);
-            cmd.Parameters.Add("@sid", Session["userID"]);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            Response.Redirect("~/Course/InProgressCoursePage.aspx?courseID=" + cid);
-
-        }
-
-		protected void submittedAssigns_Click(object sender, EventArgs e)
-		{
-
-            if (Session["userID"] == null)
-                Response.Redirect("~/SignIn.aspx");
-            else {
-                int cid = int.Parse(Request.QueryString["courseID"]);
-
-                Response.Redirect("~/assignment/SubmittedAssignments.aspx?courseID=" + cid );
-            }
-		}
-	}
+    }
 }

@@ -6,7 +6,8 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles\style.css"/>
+    <link rel="stylesheet" href="styles\style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -42,6 +43,23 @@
                     <asp:Panel runat="server" ID="ShowSubmittedAssignments">
                         <a class="nav-link " href="..\instructor\SubmittedAssignments.aspx">
                             Submitted Assignments
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="addedCourse">
+                        <a class="nav-link " href="..\instructor\AddedCourses.aspx">
+                            Your Courses
+                        </a>
+                    </asp:Panel>
+                </li>
+
+                <li class="nav-item">
+                    <asp:Panel runat="server" ID="issueCertificate">
+                        <a class="nav-link " href="..\instructor\IssueCertificateCourses.aspx">
+                            Issue Certififcate
                         </a>
                     </asp:Panel>
                 </li>
