@@ -12,11 +12,13 @@ namespace GUCera.instructor
 {
     public partial class DefineAssignment : System.Web.UI.Page
     {
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["userID"] != null && Session["userType"].Equals(1))
             {
-                cName.Items.Clear();
+                
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd = new SqlCommand("select id, name from Course where instructorId = @instId", conn);
@@ -24,6 +26,7 @@ namespace GUCera.instructor
                 cmd.Parameters.Add(new SqlParameter("instId", Session["userID"]));
                 conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                
                 while (rdr.Read())
                 {
                     String courseName = rdr.GetString(rdr.GetOrdinal("name"));
@@ -71,18 +74,32 @@ namespace GUCera.instructor
                 cmd.Parameters.Add("@weight", weig);
                 cmd.Parameters.Add("@deadline", deadlineDate);
                 cmd.Parameters.Add("@content", Cont);
-
-
+                SqlParameter success = cmd.Parameters.Add("@sucess", SqlDbType.Int);
+                success.Direction = ParameterDirection.Output;
+                
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                Response.Redirect("~/Default.aspx");
+                if (success.Value.ToString().Equals("0"))
+                {
+                    incorrectInput.Controls.Clear();
+                    Label l = new Label();
+                    l.Text = "You can't add this assignments because Assignemnts weights exceeded 100%";
+                    incorrectInput.Controls.Add(l);
+                    
+                }
+                else
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
             }
             catch (Exception ex)
             {
+                incorrectInput.Controls.Clear();
                 Label l = new Label();
                 l.Text = "Incorrect Assignment Information or Assignment already exists";
                 incorrectInput.Controls.Add(l);
+                
             }
             
         }

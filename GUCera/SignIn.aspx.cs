@@ -14,17 +14,22 @@ namespace GUCera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["userID"] != null) {
                 Response.Redirect("~/Default.aspx"); 
             }
+
 
         }
 
         protected void signin_Click(object sender, EventArgs e)
         {
+            PerformSignIN();
+        }
 
-
-
+        
+        void PerformSignIN()
+        {
             string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
             SqlConnection conn = new SqlConnection(connString);
 
@@ -81,7 +86,6 @@ namespace GUCera
                 incorrectLabel.Text = "Incorrect Username or Password";
                 incorrect.Controls.Add(incorrectLabel) ; 
             }
-
         }
 
        

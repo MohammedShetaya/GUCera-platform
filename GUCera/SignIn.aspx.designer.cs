@@ -7,47 +7,57 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera
-{
-
-
-    public partial class SignIn
-    {
-
+namespace GUCera {
+    
+    
+    public partial class SignIn {
+        
         /// <summary>
         /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
-
+        
         /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
-
+        
         /// <summary>
         /// signin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button signin;
-
+        
         /// <summary>
         /// incorrect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel incorrect;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new GUCera.Site Master {
+            get {
+                return ((GUCera.Site)(base.Master));
+            }
+        }
     }
 }

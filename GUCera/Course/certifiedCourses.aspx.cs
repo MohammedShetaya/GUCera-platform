@@ -16,9 +16,7 @@ namespace GUCera.Course
         {
             if (Session["userID"] != null && Session["userType"].Equals(0))
             {
-
-                certifiedCoursesPanel.Items.Clear();
-
+                
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
                 SqlConnection conn = new SqlConnection(connString);
 
