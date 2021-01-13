@@ -78,7 +78,7 @@
     <Content Include="Course\certifiedCourses.aspx" />
     <Content Include="Course\CourseCertificate.aspx" />
     <Content Include="Course\InProgressCoursePage.aspx" />
-    <Content Include="Database after modification\GUCera.sql" />
+    <Content Include="GUCera.sql" />
     <Content Include="images\certificate.jpg" />
     <Content Include="Course\AddedCoursePage.aspx" />
     <Content Include="images\assignment.jpg" />
