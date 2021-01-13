@@ -59,6 +59,38 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="content">Content</label>
+                                <div class="input-group">
+                                    <asp:TextBox ID="content" class="form-control" TextMode="SingleLine" runat="server" placeholder="Course Content" required="true"></asp:TextBox>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="mdi mdi-credit-card"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <div class="input-group">
+                                    <asp:TextBox ID="description" class="form-control" TextMode="SingleLine" runat="server" placeholder="Course Description" required="true"></asp:TextBox>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="mdi mdi-credit-card"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <asp:Panel runat="server" class="text-danger" id="incorrectInput">
 
                     </asp:Panel>

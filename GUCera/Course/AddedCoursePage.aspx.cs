@@ -67,13 +67,13 @@ namespace GUCera.instructor
 
                 }
 
-                //display assignments to be done 
+                //display assignments of the course 
 
                 rdr.Close();
                 conn.Close();
 
 
-                SqlCommand cmd1 = new SqlCommand("select * from Course inner join Assignment on Course.id = Assignment.cid where Course.instructorId = @ins  and Course.id = @cc", conn);
+                SqlCommand cmd1 = new SqlCommand("select A.number , A.content , A.type from Course C inner join Assignment A on C.id = A.cid where C.instructorId = @ins  and C.id = @cc", conn);
                 cmd1.CommandType = CommandType.Text;
                 cmd1.Parameters.Add(new SqlParameter("@cc", ID));
                 cmd1.Parameters.Add(new SqlParameter("@ins", Session["userID"]));
@@ -85,23 +85,27 @@ namespace GUCera.instructor
 
                 while (rdr.Read())
                 {
+                   
+                        int assignNum = rdr.GetInt32(rdr.GetOrdinal("number"));
 
+                        string assignType = rdr.GetString(rdr.GetOrdinal("type"));
+
+
+                    string assignCont = "";
                     try
                     {
-                        int assignNum = rdr.GetInt32(rdr.GetOrdinal("number"));
-                        string assignType = rdr.GetString(rdr.GetOrdinal("type"));
-                        string assignCont = rdr.GetString(rdr.GetOrdinal("content"));
+                         assignCont = rdr.GetString(rdr.GetOrdinal("content"));
+                    }
+                    catch (Exception)
+                    {
+                    }
 
-                        courseAssignments.Controls.Add(new Literal() { Text = "<div class=\"card\"><div class=\"card-body\"><h5 class=\"card-title\">" + assignType + " " + assignNum + "</h5><p class=\"card-text\">" + assignCont + "</p>" });
+
+                    courseAssignments.Controls.Add(new Literal() { Text = "<div class=\"card\"><div class=\"card-body\"><h5 class=\"card-title\">" + assignType + " " + assignNum + "</h5><p class=\"card-text\">" + assignCont + "</p>" });
 
                    
                         courseAssignments.Controls.Add(new Literal() { Text = "</div></div>" });
-                    }
-                    catch (Exception ex)
-                    {
-
-                        continue;
-                    }
+                   
                 }
 
                 // render the feedbacks for this course 

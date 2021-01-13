@@ -29,9 +29,12 @@ namespace GUCera.instructor
             try
             {
                 string nam = name.Text;
-            string cred = Credit.Text;
-            string price = Price.Text;
-            
+                string cred = Credit.Text;
+                string price = Price.Text;
+
+                string cont = content.Text;
+                string desc = description.Text;
+
 
 
 
@@ -40,7 +43,8 @@ namespace GUCera.instructor
 
             SqlCommand cmd = new SqlCommand("InstAddCourse", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-
+                cmd.Parameters.Add("@content" , cont );
+                cmd.Parameters.Add("@description", desc);
             cmd.Parameters.Add("@creditHours", cred);
             cmd.Parameters.Add("@name", nam);
             cmd.Parameters.Add("@price", price);
@@ -51,6 +55,7 @@ namespace GUCera.instructor
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
 
                 Response.Redirect("~/ViewProfile.aspx");
             }

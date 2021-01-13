@@ -66,7 +66,7 @@ namespace GUCera.Instructor
                     Session["userID"] = (rdr.GetInt32(rdr.GetOrdinal("id")));
                     Session["firstName"] = rdr.GetString(rdr.GetOrdinal("firstName"));
                     Session["lastName"] = rdr.GetString(rdr.GetOrdinal("lastName"));
-                    Session["userType"] = 0;
+                    Session["userType"] = 1 ;
                 }
 
                 Response.Redirect("~/Default.aspx");
