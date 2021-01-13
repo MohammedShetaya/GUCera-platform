@@ -32,26 +32,26 @@
                             <asp:Button ID="slideButton1" runat="server" class="btn btn-primary" Text="Add Courses" OnClick="AddCoursesButton_Click" />
                         </div>
                     </div>
-                    <%--<div class="carousel-item" interval="5000">
-                        <img src="..\images\promocodes.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-item" interval="5000">
+                        <img src="..\images\assignment.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>
-                                <asp:Panel ID="slidePanel2" runat="server">We are offering you many powerfull promocodes</asp:Panel>
+                                <asp:Panel ID="slidePanel2" runat="server">You can view the assignments submitted by your students.</asp:Panel>
                             </h1>
 
-                            <asp:Button ID="slideButton2" runat="server" class="btn btn-primary" Text="Discover Promocodes" OnClick="promocodesButton_Click" />
+                            <asp:Button ID="slideButton2" runat="server" class="btn btn-primary" Text="View Submitted Assignments" OnClick="promocodesButton_Click" />
                         </div>
                     </div>
                     <div class="carousel-item" interval="5000">
                         <img src="..\images\certificate.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>
-                                <asp:Panel ID="slidePanel3" runat="server">We are offering certificates after completing your courses</asp:Panel>
+                                <asp:Panel ID="slidePanel3" runat="server">You can issue certificates to your students in different courses.</asp:Panel>
                             </h1>
 
-                            <asp:Button ID="slideButton3" runat="server" class="btn btn-primary" Text="Show certificates" OnClick="certificatesButton_Click" />
+                            <asp:Button ID="slideButton3" runat="server" class="btn btn-primary" Text="Issue certificate" OnClick="certificatesButton_Click" />
                         </div>
-                    </div>--%>
+                    </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

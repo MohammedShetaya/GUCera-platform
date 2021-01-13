@@ -17,7 +17,7 @@ namespace GUCera
             if (Session["userID"] != null)
             {
                 Label l1 = new Label();
-                l1.Text = Session["firstName"] + " " + Session["lastName"]+"  ("+Session["userID"]+")";
+                l1.Text = Session["firstName"] + " " + Session["lastName"]+"  (ID: "+Session["userID"]+")";
                 profile.Controls.Add(l1);
 
                 if (Session["usertype"].Equals(0))

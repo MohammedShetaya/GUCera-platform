@@ -24,5 +24,16 @@ namespace GUCera.instructor
         {
             Response.Redirect("~/instructor/InstructorAddCourse.aspx");
         }
+
+        protected void promocodesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/instructor/SubmittedAssignments.aspx");
+
+        }
+
+        protected void certificatesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/instructor/IssueCertificateCourses.aspx");
+        }
     }
 }
