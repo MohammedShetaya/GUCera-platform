@@ -7,66 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUCera.admin {
-    
-    
-    public partial class CreateNewPromoCode {
-        
-        /// <summary>
-        /// CodeNum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodeNum;
-        
-        /// <summary>
-        /// DiscPerc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DiscPerc;
-        
-        /// <summary>
-        /// expire control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox expire;
-        
-        /// <summary>
-        /// incorrectInput control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel incorrectInput;
-        
-        /// <summary>
-        /// addCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addCard;
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new GUCera.Site Master {
-            get {
-                return ((GUCera.Site)(base.Master));
-            }
-        }
-    }
+namespace GUCera.admin
+{
+
+
+	public partial class CreateNewPromoCode
+	{
+
+		/// <summary>
+		/// CodeNum control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox CodeNum;
+
+		/// <summary>
+		/// DiscPerc control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox DiscPerc;
+
+		/// <summary>
+		/// expire control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox expire;
+
+		/// <summary>
+		/// incorrectInput control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel incorrectInput;
+
+		/// <summary>
+		/// addCard control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button addCard;
+	}
 }

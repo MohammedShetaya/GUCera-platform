@@ -16,6 +16,7 @@ namespace GUCera
         {
             
             if (Session["userID"] != null) {
+
                 Response.Redirect("~/Default.aspx"); 
             }
 
@@ -35,8 +36,19 @@ namespace GUCera
 
             SqlCommand cmd = new SqlCommand("userLogin", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-
-            int u = Int32.Parse(username.Text);
+            int u = 0;
+            try
+            {
+                u = Int32.Parse(username.Text);
+            }
+            catch (Exception ex)
+            {
+                Label incorrectLabel = new Label();
+                incorrectLabel.Text = "Incorrect Username or Password";
+                incorrect.Controls.Add(incorrectLabel);
+                return;
+            }
+            
             string p = password.Text;
 
             cmd.Parameters.Add("@id", u);

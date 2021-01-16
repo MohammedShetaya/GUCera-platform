@@ -9,7 +9,7 @@
            </div>
         </div>
 
-        <div class="row">
+        <asp:Panel runat="server" DefaultButton="addNumber" class="row">
             <div class="col-sm"></div>
             <div class="col-sm">
                <div class="input-group input-group-lg">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="col-sm"></div>
-        </div>
+        </asp:Panel>
     <hr class="colorgraph" />
 
 

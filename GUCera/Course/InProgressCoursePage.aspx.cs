@@ -14,14 +14,12 @@ namespace GUCera.Course
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (Session["userID"] == null)
             {
                 Response.Redirect("~/SignIn.aspx");
             }
             else
             {
-
                 //display the course info 
 
                 string connString = WebConfigurationManager.ConnectionStrings["GUCera"].ToString();
@@ -33,7 +31,7 @@ namespace GUCera.Course
 
                 int ID = int.Parse(Request.QueryString["courseID"]);
 
-    
+
                 cmd.Parameters.Add("@id", ID);
 
                 conn.Open();
@@ -42,7 +40,6 @@ namespace GUCera.Course
 
                 if (rdr.Read())
                 {
-
                     string name = rdr.GetString(rdr.GetOrdinal("name"));
                     int credit = rdr.GetInt32(rdr.GetOrdinal("creditHours"));
 
@@ -52,18 +49,19 @@ namespace GUCera.Course
                     {
                         disc = rdr.GetString(rdr.GetOrdinal("courseDescription"));
                         cont = rdr.GetString(rdr.GetOrdinal("content"));
-
                     }
                     catch (Exception ex)
                     {
                     }
 
-                    courseName.Controls.Add(new Literal() { Text = "<h1>" + name + "<h1>" });
+                    courseName.Controls.Add(new Literal() {Text = "<h1>" + name + "<h1>"});
 
-                    creditHours.Controls.Add(new Literal() { Text = "<p style = \"margin-top:15px \">" + credit + "<p>" });
-                    courseDisc.Controls.Add(new Literal() { Text = "<p style=\"padding-bottom:20px; \">" + disc + "<p>" });
-                    courseContent.Controls.Add(new Literal() { Text = "<p style=\"padding-bottom:20px; \">" + cont + "<p>" });
-
+                    creditHours.Controls.Add(new Literal()
+                        {Text = "<p style = \"margin-top:15px \">" + credit + "<p>"});
+                    courseDisc.Controls.Add(new Literal()
+                        {Text = "<p style=\"padding-bottom:20px; \">" + disc + "<p>"});
+                    courseContent.Controls.Add(new Literal()
+                        {Text = "<p style=\"padding-bottom:20px; \">" + cont + "<p>"});
                 }
 
                 //display assignments to be done 
@@ -83,14 +81,17 @@ namespace GUCera.Course
 
                 while (rdr.Read())
                 {
-
                     try
                     {
                         int assignNum = rdr.GetInt32(rdr.GetOrdinal("number"));
                         string assignType = rdr.GetString(rdr.GetOrdinal("type"));
                         string assignCont = rdr.GetString(rdr.GetOrdinal("content"));
 
-                        courseAssignments.Controls.Add(new Literal() { Text = "<div class=\"card\"><div class=\"card-body\"><h5 class=\"card-title\">" + assignType + " " + assignNum + "</h5><p class=\"card-text\">" + assignCont + "</p>" });
+                        courseAssignments.Controls.Add(new Literal()
+                        {
+                            Text = "<div class=\"card\"><div class=\"card-body\"><h5 class=\"card-title\">" +
+                                   assignType + " " + assignNum + "</h5><p class=\"card-text\">" + assignCont + "</p>"
+                        });
 
                         Button b1 = new Button();
                         b1.Text = "submit assign";
@@ -99,11 +100,10 @@ namespace GUCera.Course
                         b1.Click += new EventHandler(submitAssignment_Click);
 
                         courseAssignments.Controls.Add(b1);
-                        courseAssignments.Controls.Add(new Literal() { Text = "</div></div>" });
+                        courseAssignments.Controls.Add(new Literal() {Text = "</div></div>"});
                     }
                     catch (Exception ex)
                     {
-
                         continue;
                     }
                 }
@@ -123,18 +123,17 @@ namespace GUCera.Course
 
                 while (rdr.Read())
                 {
-
                     string comment = rdr.GetString(rdr.GetOrdinal("comment"));
                     int likes = rdr.GetInt32(rdr.GetOrdinal("numberOfLikes"));
                     int adder = rdr.GetInt32(rdr.GetOrdinal("sid"));
                     int feedNumber = rdr.GetInt32(rdr.GetOrdinal("number"));
+                    SqlConnection conn1 = new SqlConnection(connString);
 
-                    SqlCommand cc = new SqlCommand("select firstName , lastName from Users where id = @sid ", conn);
+                    SqlCommand cc = new SqlCommand("select firstName , lastName from Users where id = @sid ", conn1);
                     cc.CommandType = CommandType.Text;
                     cc.Parameters.Add(new SqlParameter("sid", adder));
-
+                    conn1.Open();
                     SqlDataReader rr = cc.ExecuteReader(CommandBehavior.CloseConnection);
-
 
                     string adderfName = "";
                     string adderlName = "";
@@ -142,7 +141,6 @@ namespace GUCera.Course
                     {
                         adderfName = rr.GetString(rr.GetOrdinal("firstName"));
                         adderlName = rr.GetString(rr.GetOrdinal("lastName"));
-
                     }
                     /*                
                 <div class="row" style="margin-bottom:25px;">
@@ -166,25 +164,30 @@ namespace GUCera.Course
                      */
 
 
-                    feedbackContent.Controls.Add(new Literal() { Text = "<div class=\"row\" style=\"margin-bottom:25px;\"> <div class=\"col-sm-4 col-md-2 col-5\">  <img class=\"rounded\" style=\"height:45PX; width: 45px;\" alt=\"\" src=\"..\\images\\user-profile.png\"/> <h6> " + adderfName + " " + adderlName + "</h6></div> <div class=\"col-md-7 col-6\"> <div class=\"row\"><p>" + comment + "</p></div><div class=\"row\">" });
-                  
+                    feedbackContent.Controls.Add(new Literal()
+                    {
+                        Text =
+                            "<div class=\"row\" style=\"margin-bottom:25px;\"> <div class=\"col-sm-4 col-md-2 col-5\">  <img class=\"rounded\" style=\"height:45PX; width: 45px;\" alt=\"\" src=\"..\\images\\user-profile.png\"/> <h6> " +
+                            adderfName + " " + adderlName +
+                            "</h6></div> <div class=\"col-md-7 col-6\"> <div class=\"row\"><p>" + comment +
+                            "</p></div><div class=\"row\">"
+                    });
+
                     LinkButton bb = new LinkButton();
                     bb.CssClass = "fa fa-thumbs-up";
                     bb.Click += new EventHandler(addLike_Click);
                     bb.ID = ID + "-" + feedNumber;
                     feedbackContent.Controls.Add(bb);
 
-                    feedbackContent.Controls.Add(new Literal() { Text = "<span style = \"margin-left:20px;\">" + likes + "</span></div></div></div>" });
-
+                    feedbackContent.Controls.Add(new Literal()
+                        {Text = "<span style = \"margin-left:20px;\">" + likes + "</span></div></div></div>"});
                 }
             }
-
         }
 
         protected void submitAssignment_Click(object sender, EventArgs e)
         {
-
-            Button s = (Button)sender;
+            Button s = (Button) sender;
             string[] assign = (s.ID).Split('-');
             string assignType = assign[0];
             int assignNum = int.Parse(assign[1]);
@@ -208,15 +211,12 @@ namespace GUCera.Course
             conn.Close();
 
             Response.Redirect("~/Course/InProgressCoursePage.aspx?courseID=" + cid);
-
-
         }
 
 
         protected void addLike_Click(object sender, EventArgs e)
         {
-
-            LinkButton s = (LinkButton)sender;
+            LinkButton s = (LinkButton) sender;
 
             string senderID = s.ID;
             string[] likeData = senderID.Split('-');
@@ -245,20 +245,17 @@ namespace GUCera.Course
 
                 conn.Open();
 
-                SqlCommand cc = new SqlCommand("update Feedback set numberOfLikes = @num where cid = @ci  and number = @nu", conn);
+                SqlCommand cc =
+                    new SqlCommand("update Feedback set numberOfLikes = @num where cid = @ci  and number = @nu", conn);
                 cc.Parameters.Add(new SqlParameter("num", numberOfLikes));
                 cc.Parameters.Add(new SqlParameter("ci", cid));
                 cc.Parameters.Add(new SqlParameter("nu", feedNumber));
 
                 cc.ExecuteNonQuery();
                 conn.Close();
-
-
             }
 
             Response.Redirect("~/Course/InProgressCoursePage.aspx?courseID=" + cid);
-
-
         }
 
 
@@ -282,19 +279,18 @@ namespace GUCera.Course
             conn.Close();
 
             Response.Redirect("~/Course/InProgressCoursePage.aspx?courseID=" + cid);
-
         }
 
-		protected void submittedAssigns_Click(object sender, EventArgs e)
-		{
-
+        protected void submittedAssigns_Click(object sender, EventArgs e)
+        {
             if (Session["userID"] == null)
                 Response.Redirect("~/SignIn.aspx");
-            else {
+            else
+            {
                 int cid = int.Parse(Request.QueryString["courseID"]);
 
-                Response.Redirect("~/assignment/SubmittedAssignments.aspx?courseID=" + cid );
+                Response.Redirect("~/assignment/SubmittedAssignments.aspx?courseID=" + cid);
             }
-		}
-	}
+        }
+    }
 }

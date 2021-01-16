@@ -10,7 +10,7 @@
     </div>
 
 
-    <div class="padding" style="padding-bottom: 50px; margin-top: 30px;">
+    <asp:Panel runat="server" DefaultButton="addCard" class="padding" style="padding-bottom: 50px; margin-top: 30px;">
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-    </div>
+    </asp:Panel>
 </div>
 
 </asp:Content>

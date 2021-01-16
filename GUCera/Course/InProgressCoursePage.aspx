@@ -98,7 +98,7 @@
 
     <div class="container">
          
-         <div class="form-group" style="margin-bottom:30px;">
+         <asp:Panel runat="server" DefaultButton="feedbackButton" class="form-group" style="margin-bottom:30px;">
              <div class="row">
              <div class ="col-6">
                 <label style ="font:bold">Add Feedback to this course</label>
@@ -109,7 +109,7 @@
 				 <asp:Button ID="feedbackButton" runat="server" OnClick="addFeedback_Click" class="btn btn-outline-info" Text="Add Feedback" />
              </div>
             </div>
-        </div>
+        </asp:Panel>
 
         <asp:Panel runat="server" ID="feedbackContent" >
 
